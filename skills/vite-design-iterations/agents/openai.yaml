@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vite Design Iterations"
+  short_description: "Build 5 Vite design concepts"
+  default_prompt: "Use $vite-design-iterations with $frontend-design to create 5 distinct Vite vanilla web-app design concepts and a comparison gallery."
