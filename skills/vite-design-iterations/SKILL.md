@@ -7,8 +7,6 @@ description: Create exactly five distinct web-application design iterations in a
 
 Build a five-concept local design exploration workspace in Vite vanilla, not a production app. Optimize for fast concept development in the dev server.
 
-Before making structural changes, read [references/vite-multi-page.md](references/vite-multi-page.md) and [references/workflow-notes.md](references/workflow-notes.md).
-
 ## Workflow
 
 ### 1. Classify the target workspace
@@ -22,6 +20,7 @@ Before making structural changes, read [references/vite-multi-page.md](reference
 - Use `$frontend-design` to push the visual quality and differentiation of each concept.
 - Generate five concepts that are clearly different in mood, typography, layout, color, and motion.
 - Name each concept with a distinct design direction before implementation.
+- Keep each concept visually distinct, not a polished variant of the same idea.
 
 ### 3. Create the design-iteration structure
 
@@ -47,6 +46,8 @@ concepts/
 - In a fresh project, use root `index.html` as the gallery.
 - In an existing Vite vanilla project, mirror the same structure under `design-iterations/`.
 - Keep concept files local to each concept.
+- Each concept must have its own primary HTML entrypoint.
+- Add secondary pages only when a concept benefits from multiple views, and keep them inside that concept's directory.
 
 ### 4. Build a real comparison gallery
 
@@ -57,18 +58,19 @@ concepts/
   - link to the main page
   - links to any extra pages for that concept
 - Every concept page must link back to the gallery and include a concept switcher.
+- The gallery must provide fast comparison and switching across all five concepts.
 
 ### 5. Use Vite's native HTML routing
 
 - Treat HTML files as first-class source files. Do not tuck the gallery into `public/`.
 - Rely on Vite's direct HTML routing in development.
+- Any HTML file under the Vite root is directly routable in development.
+- Nested pages should work directly, for example `concepts/concept-01/index.html` at `/concepts/concept-01/`.
+- Use Vite's `vanilla` template unless the user explicitly asks for something else.
+- When scaffolding a fresh project, use `.` with `--no-interactive`.
 - Do not introduce a custom `root`, router, or framework unless the user asks.
+- Do not add build config unless the user explicitly asks for production output.
 - Keep assets and CSS simple and local to the pages using them.
-
-### 6. Verify before finishing
-
-- Run the dev server if needed.
-- Check that the gallery opens, all five concepts load, and links between concepts work.
 
 ## Concrete Defaults
 
@@ -78,6 +80,13 @@ concepts/
 - Default concept directory names: `concept-01` through `concept-05`.
 - Default gallery title: a concise project name plus "Design Gallery".
 - Keep the iteration count fixed at five unless the user explicitly changes it.
+
+## Verification
+
+- Confirm the gallery opens as the comparison view.
+- Confirm all five concepts load in local development.
+- Confirm every concept page can navigate back to the gallery.
+- Confirm cross-concept switching works.
 
 ## Notes
 
