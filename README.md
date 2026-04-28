@@ -2,3 +2,5 @@ Inspired by https://github.com/mitsuhiko/agent-stuff. I want to gather interesti
 
 - [web-browser skill](https://github.com/mitsuhiko/agent-stuff/blob/main/skills/web-browser/SKILL.md): Is apparently better than playwright MCP at browser interactions. Want to try it out. [permalink](https://github.com/mitsuhiko/agent-stuff/blob/063815263cb1031acfa73e12c86f01281dfac5e2/skills/web-browser/SKILL.md)
 - [anthropics/skills/frontend-design](https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md): According to Theo from T3gg, he uses this with a prompt that asks for up to 5 unique designs when creating a new design. Something to try. [permalink](https://github.com/anthropics/skills/blob/a5bcdd7e58cdff48566bf876f0a72a2008dcefbc/skills/frontend-design/SKILL.md)
+- [grill-me from mattpocock](https://github.com/mattpocock/skills/tree/main/grill-me)`npx skills@latest add mattpocock/skills/grill-me`
+- [badlogic/pi-skills](https://github.com/badlogic/pi-skills) from the creator of Pi
