@@ -1,3 +1,17 @@
+
+## Skills
+
+- [`grill-me`](skills/grill-me) - planning interview from [mattpocock/skills](https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md)
+- [`frontend-design`](skills/frontend-design) - from [anthropics/skills](https://github.com/anthropics/skills/blob/d230a6dd6eb1a0dbee9fec55e2f00a96e28dff81/skills/frontend-design/SKILL.md)
+- [`design-iterations`](skills/design-iterations) - Frontend design concepts exploration
+
+### To try
+
+- [`frontend-design`](https://github.com/mitsuhiko/agent-stuff/blob/b861028c706edf3e3f983cde09dd8cc8549ec948/skills/frontend-design/SKILL.md)
+
+
+## Inspiration
+
 Inspired by https://github.com/mitsuhiko/agent-stuff. I want to gather interesting skills, prompts, commands, etc.
 
 - [web-browser skill](https://github.com/mitsuhiko/agent-stuff/blob/main/skills/web-browser/SKILL.md): Is apparently better than playwright MCP at browser interactions. Want to try it out. [permalink](https://github.com/mitsuhiko/agent-stuff/blob/063815263cb1031acfa73e12c86f01281dfac5e2/skills/web-browser/SKILL.md)
