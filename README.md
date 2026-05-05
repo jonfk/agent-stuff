@@ -4,6 +4,7 @@
 - [`grill-me`](skills/grill-me) - planning interview from [mattpocock/skills](https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md)
 - [`frontend-design`](skills/frontend-design) - from [anthropics/skills](https://github.com/anthropics/skills/blob/d230a6dd6eb1a0dbee9fec55e2f00a96e28dff81/skills/frontend-design/SKILL.md)
 - [`design-iterations`](skills/design-iterations) - Frontend design concepts exploration
+- [`improve-codebase-architecture`](skills/improve-codebase-architecture) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8/skills/engineering/improve-codebase-architecture)
 
 ### To try
 
