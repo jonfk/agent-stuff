@@ -12,9 +12,9 @@
 
 ## Pi Extensions
 
-Pi extensions are vendored under [`pi-extensions`](pi-extensions). Subtree metadata and update instructions live in [`pi-extensions/SUBTREE.md`](pi-extensions/SUBTREE.md).
+For vendored extensions subtree metadata and update instructions live in [`pi-extensions/SUBTREE.md`](pi-extensions/SUBTREE.md).
 
-- [`pi-telegram`](pi-extensions/pi-telegram) - Telegram bridge for Pi, imported as a subtree from [llblab/pi-telegram](https://github.com/llblab/pi-telegram) at [`c1b253a`](https://github.com/llblab/pi-telegram/commit/c1b253aeb05604e3adc70bf8642011fea1113c2c)
+- [`pi-telegram`](pi-extensions/pi-telegram) - Telegram bridge for Pi, from [llblab/pi-telegram](https://github.com/llblab/pi-telegram) at [`c1b253a`](https://github.com/llblab/pi-telegram/commit/c1b253aeb05604e3adc70bf8642011fea1113c2c)
 
 
 ## Inspiration
