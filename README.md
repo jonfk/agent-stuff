@@ -10,6 +10,12 @@
 
 - [`frontend-design`](https://github.com/mitsuhiko/agent-stuff/blob/b861028c706edf3e3f983cde09dd8cc8549ec948/skills/frontend-design/SKILL.md)
 
+## Pi Extensions
+
+Pi extensions are vendored under [`pi-extensions`](pi-extensions). Subtree metadata and update instructions live in [`pi-extensions/SUBTREE.md`](pi-extensions/SUBTREE.md).
+
+- [`pi-telegram`](pi-extensions/pi-telegram) - Telegram bridge for Pi, imported as a subtree from [llblab/pi-telegram](https://github.com/llblab/pi-telegram) at [`c1b253a`](https://github.com/llblab/pi-telegram/commit/c1b253aeb05604e3adc70bf8642011fea1113c2c)
+
 
 ## Inspiration
 
