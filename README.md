@@ -12,6 +12,14 @@
 
 ## Pi Extensions
 
+This repo is a Pi package for extensions only. Skills are intentionally not exposed through the Pi package manifest because they are managed separately with `skills.sh`.
+
+Install the extension package from git:
+
+```bash
+pi install git:github.com/jonfk/agent-stuff
+```
+
 For vendored extensions subtree metadata and update instructions live in [`pi-extensions/SUBTREE.md`](pi-extensions/SUBTREE.md).
 
 - [`pi-telegram`](pi-extensions/pi-telegram) - Telegram bridge for Pi, from [llblab/pi-telegram](https://github.com/llblab/pi-telegram) at [`c1b253a`](https://github.com/llblab/pi-telegram/commit/c1b253aeb05604e3adc70bf8642011fea1113c2c)

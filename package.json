@@ -1,0 +1,28 @@
+{
+  "name": "agent-stuff",
+  "version": "0.1.0",
+  "description": "Jon's Pi coding agent extensions and related agent resources",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonfk/agent-stuff.git"
+  },
+  "readme": "README.md",
+  "type": "module",
+  "private": true,
+  "keywords": [
+    "pi-package",
+    "pi-extension"
+  ],
+  "pi": {
+    "extensions": [
+      "./pi-extensions/pi-telegram/index.ts"
+    ],
+    "image": "https://github.com/jonfk/agent-stuff/raw/main/pi-extensions/pi-telegram/screenshot.png"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-ai": "*",
+    "@mariozechner/pi-agent-core": "*",
+    "@sinclair/typebox": "*"
+  }
+}
