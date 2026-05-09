@@ -7,6 +7,7 @@
 - [`improve-codebase-architecture`](skills/improve-codebase-architecture) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8/skills/engineering/improve-codebase-architecture)
 - [`grill-with-docs`](skills/grill-with-docs) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/grill-with-docs)
 - [`tdd`](skills/tdd) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/tdd)
+- [`to-prd`](skills/to-prd) - Inspired by [mattpocock/skills](https://github.com/mattpocock/skills/blob/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/to-prd/SKILL.md) with modifications
 
 ### To try
 
