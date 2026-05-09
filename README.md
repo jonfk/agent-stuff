@@ -6,6 +6,7 @@
 - [`design-iterations`](skills/design-iterations) - Frontend design concepts exploration
 - [`improve-codebase-architecture`](skills/improve-codebase-architecture) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8/skills/engineering/improve-codebase-architecture)
 - [`grill-with-docs`](skills/grill-with-docs) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/grill-with-docs)
+- [`tdd`](skills/tdd) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/tdd)
 
 ### To try
 
@@ -21,7 +22,7 @@ Install the extension package from git:
 pi install git:github.com/jonfk/agent-stuff
 ```
 
-For vendored extensions subtree metadata and update instructions live in [`pi-extensions/SUBTREE.md`](pi-extensions/SUBTREE.md).
+Vendored code subtree metadata and update notes live in [`SUBTREE.md`](SUBTREE.md).
 
 - [`pi-telegram`](pi-extensions/pi-telegram) - Telegram bridge for Pi, from [llblab/pi-telegram](https://github.com/llblab/pi-telegram) at [`c1b253a`](https://github.com/llblab/pi-telegram/commit/c1b253aeb05604e3adc70bf8642011fea1113c2c)
 
