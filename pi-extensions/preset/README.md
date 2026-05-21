@@ -18,7 +18,7 @@ pi install ~/code/pi-extensions/main/extensions/preset
 
 ## Configure
 
-Create `preset.jsonc` in your pi agent config folder:
+Create `preset.jsonc` in your pi agent config folder for global presets:
 
 ```jsonc
 {
@@ -40,6 +40,27 @@ Create `preset.jsonc` in your pi agent config folder:
   }
 }
 ```
+
+You can also define project-local presets in `./.pi/preset.jsonc` from the directory where
+you start pi:
+
+```jsonc
+{
+  "presets": {
+    "review": {
+      "provider": "openai-codex",
+      "model": "gpt-5.2-codex",
+      "thinkingLevel": "high",
+      "tools": ["read", "bash"],
+      "instructions": "Review this project. Do not edit files."
+    }
+  }
+}
+```
+
+Project presets are merged over global presets. If a project preset has the same name as a
+global preset, the project preset wins. Project-local config only supports `presets`; other
+extension options should stay in the global agent config.
 
 ## Usage
 

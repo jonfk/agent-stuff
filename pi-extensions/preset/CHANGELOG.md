@@ -1,5 +1,11 @@
 # @richardgill/pi-preset
 
+## Unreleased
+
+### Minor Changes
+
+- Add project-local preset configuration from `./.pi/preset.jsonc`. Project presets merge over global presets by name, while non-preset extension options remain global-only.
+
 ## 0.0.6
 
 ### Patch Changes
