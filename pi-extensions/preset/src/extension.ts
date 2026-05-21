@@ -10,6 +10,7 @@ export type Preset = {
   model?: string;
   thinkingLevel?: ThinkingLevel;
   tools?: string[];
+  systemPrompt?: string;
   instructions?: string;
 };
 
@@ -293,6 +294,15 @@ const registerCommand = (options: ResolvedOptions, state: PresetState, pi: Exten
   });
 };
 
+const buildPresetSystemPrompt = (
+  systemPrompt: string,
+  preset: Preset | undefined,
+): string | undefined => {
+  if (preset?.systemPrompt === undefined && preset?.instructions === undefined) return undefined;
+  const baseSystemPrompt = preset.systemPrompt ?? systemPrompt;
+  return preset.instructions ? `${baseSystemPrompt}\n\n${preset.instructions}` : baseSystemPrompt;
+};
+
 export const preset = (input: PresetOptions = {}) => {
   const options = resolveOptions(input);
   const state = createState();
@@ -305,8 +315,9 @@ export const preset = (input: PresetOptions = {}) => {
     registerShortcut(options, state, pi);
     registerCommand(options, state, pi);
     pi.on("before_agent_start", async (event) => {
-      if (!state.activePreset?.instructions) return;
-      return { systemPrompt: `${event.systemPrompt}\n\n${state.activePreset.instructions}` };
+      const systemPrompt = buildPresetSystemPrompt(event.systemPrompt, state.activePreset);
+      if (systemPrompt === undefined) return;
+      return { systemPrompt };
     });
     pi.on("session_start", async (_event, ctx) => {
       await handleSessionStart(options, state, ctx, pi);

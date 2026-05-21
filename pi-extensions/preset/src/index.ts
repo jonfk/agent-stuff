@@ -11,6 +11,7 @@ const PresetSchema = z.object({
   model: z.string().optional(),
   thinkingLevel: ThinkingLevelSchema.optional(),
   tools: z.array(z.string()).optional(),
+  systemPrompt: z.string().optional(),
   instructions: z.string().optional(),
 });
 

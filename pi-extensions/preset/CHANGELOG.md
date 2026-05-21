@@ -4,6 +4,8 @@
 
 ### Minor Changes
 
+- Add per-preset `systemPrompt` support. `systemPrompt` replaces the current system prompt for the preset, while `instructions` continue to append guidance and can be combined with `systemPrompt`.
+
 - Add project-local preset configuration from `./.pi/preset.jsonc`. Project presets merge over global presets by name, while non-preset extension options remain global-only.
 
 ## 0.0.6
