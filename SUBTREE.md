@@ -31,6 +31,28 @@ git subtree pull --prefix=pi-extensions/pi-telegram https://github.com/llblab/pi
 
 After updating vendored code, refresh the commit and permalink here and in `README.md`.
 
+## `pi-extensions/preset`
+
+- Source: https://github.com/richardgill/pi-extensions/tree/main/extensions/preset
+- Imported from: `7e09e5371d8a7fa8d90adc91273503b68bcf6c61`
+- Permalink: https://github.com/richardgill/pi-extensions/tree/7e09e5371d8a7fa8d90adc91273503b68bcf6c61/extensions/preset
+- Ref: `main`
+- Mode: `--squash`
+- Local path: `pi-extensions/preset`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/richardgill/pi-extensions.git main
+git switch -c tmp-richardgill-pi-extensions FETCH_HEAD
+git subtree split -P extensions/preset -b tmp-richardgill-preset-split
+git switch main
+git subtree pull --prefix=pi-extensions/preset tmp-richardgill-preset-split --squash
+git branch -D tmp-richardgill-pi-extensions tmp-richardgill-preset-split
+```
+
+After updating vendored code, refresh the commit and permalink here and in `README.md`.
+
 ## Not Yet Documented As Subtrees
 
 - `skills/grill-me`
