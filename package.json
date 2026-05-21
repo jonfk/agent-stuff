@@ -1,0 +1,34 @@
+{
+  "name": "@richardgill/pi-preset",
+  "version": "0.0.6",
+  "keywords": [
+    "pi-package"
+  ],
+  "homepage": "https://github.com/richardgill/pi-extensions/tree/main/extensions/preset",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richardgill/pi-extensions",
+    "directory": "extensions/preset"
+  },
+  "files": [
+    "src"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./src/extension.ts"
+  },
+  "dependencies": {
+    "@richardgill/pi-config": "workspace:*",
+    "zod": "4.3.6"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-ai": "*",
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-tui": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  }
+}
