@@ -1,8 +1,8 @@
-import { loadConfigOrDefault } from "@richardgill/pi-config";
 import { DEFAULT_OPTIONS, type PresetOptions, preset } from "@richardgill/pi-preset";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { z } from "zod";
+import { loadConfigOrDefault } from "./pi-config.ts";
 
 const ThinkingLevelSchema = z.enum(["off", "minimal", "low", "medium", "high", "xhigh"]);
 
