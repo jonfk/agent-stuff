@@ -34,6 +34,12 @@ type ResolvedOptions = {
   persistState: boolean;
 };
 
+export type ProjectPresetOptions = Pick<PresetOptions, "presets">;
+
+export type PresetRuntimeOptions = {
+  loadProjectConfig?: (cwd: string) => ProjectPresetOptions;
+};
+
 type OriginalState = {
   model: Model<Api> | undefined;
   thinkingLevel: ThinkingLevel;
@@ -59,6 +65,26 @@ export const DEFAULT_OPTIONS: ResolvedOptions = {
 
 export const resolveOptions = (options: PresetOptions = {}): ResolvedOptions =>
   resolveConfigOptions<ResolvedOptions>(DEFAULT_OPTIONS, options);
+
+const mergeProjectPresets = (
+  options: ResolvedOptions,
+  projectConfig: ProjectPresetOptions,
+): ResolvedOptions => ({
+  ...options,
+  presets: {
+    ...options.presets,
+    ...projectConfig.presets,
+  },
+});
+
+const resolveSessionOptions = (
+  options: ResolvedOptions,
+  runtimeOptions: PresetRuntimeOptions | undefined,
+  ctx: ExtensionContext,
+): ResolvedOptions => {
+  if (!runtimeOptions?.loadProjectConfig) return options;
+  return mergeProjectPresets(options, runtimeOptions.loadProjectConfig(ctx.cwd));
+};
 
 const createState = (): PresetState => ({
   activeName: undefined,
@@ -274,22 +300,35 @@ const handleSessionStart = async (
   updateStatus(state, ctx);
 };
 
-const registerShortcut = (options: ResolvedOptions, state: PresetState, pi: ExtensionAPI): void => {
+const registerShortcut = (
+  options: ResolvedOptions,
+  runtimeOptions: PresetRuntimeOptions | undefined,
+  state: PresetState,
+  pi: ExtensionAPI,
+): void => {
   if (!options.cycleShortcut) return;
   pi.registerShortcut(options.cycleShortcut, {
     description: "Cycle presets",
     handler: async (ctx) => {
-      await cyclePreset(options, state, ctx, pi);
+      const sessionOptions = resolveSessionOptions(options, runtimeOptions, ctx);
+      await cyclePreset(sessionOptions, state, ctx, pi);
     },
   });
 };
 
-const registerCommand = (options: ResolvedOptions, state: PresetState, pi: ExtensionAPI): void => {
+const registerCommand = (
+  options: ResolvedOptions,
+  runtimeOptions: PresetRuntimeOptions | undefined,
+  state: PresetState,
+  pi: ExtensionAPI,
+): void => {
   pi.registerCommand(options.commandName, {
     description: "Switch preset configuration",
     handler: async (args, ctx) => {
-      const selected = args?.trim() || (await selectPresetName(options.presets, state, ctx));
-      await handlePresetSelection(selected, options, state, ctx, pi);
+      const sessionOptions = resolveSessionOptions(options, runtimeOptions, ctx);
+      const selected =
+        args?.trim() || (await selectPresetName(sessionOptions.presets, state, ctx));
+      await handlePresetSelection(selected, sessionOptions, state, ctx, pi);
     },
   });
 };
@@ -303,7 +342,7 @@ const buildPresetSystemPrompt = (
   return preset.instructions ? `${baseSystemPrompt}\n\n${preset.instructions}` : baseSystemPrompt;
 };
 
-export const preset = (input: PresetOptions = {}) => {
+export const preset = (input: PresetOptions = {}, runtimeOptions?: PresetRuntimeOptions) => {
   const options = resolveOptions(input);
   const state = createState();
 
@@ -312,15 +351,16 @@ export const preset = (input: PresetOptions = {}) => {
       description: "Preset configuration to use",
       type: "string",
     });
-    registerShortcut(options, state, pi);
-    registerCommand(options, state, pi);
+    registerShortcut(options, runtimeOptions, state, pi);
+    registerCommand(options, runtimeOptions, state, pi);
     pi.on("before_agent_start", async (event) => {
       const systemPrompt = buildPresetSystemPrompt(event.systemPrompt, state.activePreset);
       if (systemPrompt === undefined) return;
       return { systemPrompt };
     });
     pi.on("session_start", async (_event, ctx) => {
-      await handleSessionStart(options, state, ctx, pi);
+      const sessionOptions = resolveSessionOptions(options, runtimeOptions, ctx);
+      await handleSessionStart(sessionOptions, state, ctx, pi);
     });
     pi.on("turn_start", async () => {
       if (options.persistState && state.activeName) {

@@ -52,8 +52,8 @@ Use `instructions` to append guidance to the normal system prompt. Use `systemPr
 replace the normal system prompt for that preset. If both are set, `instructions` are
 appended to the preset `systemPrompt`.
 
-You can also define project-local presets in `./.pi/preset.jsonc` from the directory where
-you start pi:
+You can also define project-local presets in `./.pi/preset.jsonc` from the active session
+working directory:
 
 ```jsonc
 {

@@ -128,22 +128,11 @@ const parseProjectConfig = (path: string): Pick<PresetOptions, "presets"> => {
   }
 };
 
-const loadProjectConfig = (): Pick<PresetOptions, "presets"> => {
-  const path = join(process.cwd(), ".pi", "preset.jsonc");
+const loadProjectConfig = (cwd: string): Pick<PresetOptions, "presets"> => {
+  const path = join(cwd, ".pi", "preset.jsonc");
   if (!existsSync(path)) return {};
   return parseProjectConfig(path);
 };
-
-const mergeConfig = (
-  globalConfig: PresetOptions,
-  projectConfig: Pick<PresetOptions, "presets">,
-): PresetOptions => ({
-  ...globalConfig,
-  presets: {
-    ...globalConfig.presets,
-    ...projectConfig.presets,
-  },
-});
 
 const globalConfig = loadConfigOrDefault({
   filename: "preset.jsonc",
@@ -151,6 +140,4 @@ const globalConfig = loadConfigOrDefault({
   defaults: DEFAULT_OPTIONS,
 });
 
-const config = mergeConfig(globalConfig as PresetOptions, loadProjectConfig());
-
-export default preset(config as PresetOptions);
+export default preset(globalConfig as PresetOptions, { loadProjectConfig });
