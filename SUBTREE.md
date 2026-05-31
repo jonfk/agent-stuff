@@ -17,6 +17,26 @@ git subtree pull --prefix=skills/tdd tmp-mattpocock-tdd-split --squash
 git branch -D tmp-mattpocock-skills tmp-mattpocock-tdd-split
 ```
 
+## `skills/prototype`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype
+- Imported from: `aaf2453fbdfe7a15c07f11d861224f34ab4b53cb`
+- Permalink: https://github.com/mattpocock/skills/tree/aaf2453fbdfe7a15c07f11d861224f34ab4b53cb/skills/engineering/prototype
+- Ref: `main`
+- Mode: `--squash`
+- Local path: `skills/prototype`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/mattpocock/skills.git main
+git switch -c tmp-mattpocock-skills FETCH_HEAD
+git subtree split -P skills/engineering/prototype -b tmp-mattpocock-prototype-split
+git switch main
+git subtree pull --prefix=skills/prototype tmp-mattpocock-prototype-split --squash
+git branch -D tmp-mattpocock-skills tmp-mattpocock-prototype-split
+```
+
 ## `pi-extensions/pi-telegram`
 
 - Source: https://github.com/llblab/pi-telegram
