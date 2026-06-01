@@ -9,6 +9,7 @@
 - [`tdd`](skills/tdd) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/tdd)
 - [`prototype`](skills/prototype) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/aaf2453fbdfe7a15c07f11d861224f34ab4b53cb/skills/engineering/prototype)
 - [`to-prd`](skills/to-prd) - Inspired by [mattpocock/skills](https://github.com/mattpocock/skills/blob/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/to-prd/SKILL.md) with modifications
+- [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review) - Experimental strict maintainability review skill from [cursor/plugins](https://github.com/cursor/plugins/tree/3347cbab5b54136f6fba0994c3a01a56f7fb7fca/cursor-team-kit/skills/thermo-nuclear-code-quality-review), with local modifications
 
 ### To try
 
