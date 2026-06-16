@@ -37,6 +37,30 @@ git subtree pull --prefix=skills/prototype tmp-mattpocock-prototype-split --squa
 git branch -D tmp-mattpocock-skills tmp-mattpocock-prototype-split
 ```
 
+## `skills/teach`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/teach
+- Imported from: `694fa30311e02c2639942308513555e61ee84a6f`
+- Permalink: https://github.com/mattpocock/skills/tree/694fa30311e02c2639942308513555e61ee84a6f/skills/productivity/teach
+- Ref: `main`
+- Upstream subdirectory: `skills/productivity/teach`
+- Split commit: `9e5df69a8fde2b866a28e61dbc8782e780e0a131`
+- Mode: `--squash`
+- Local path: `skills/teach`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/mattpocock/skills.git main
+git switch -c tmp-mattpocock-skills-teach FETCH_HEAD
+git subtree split -P skills/productivity/teach -b tmp-mattpocock-teach-split
+git switch main
+git subtree pull --prefix=skills/teach tmp-mattpocock-teach-split --squash
+git branch -D tmp-mattpocock-skills-teach tmp-mattpocock-teach-split
+```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
 ## `skills/thermo-nuclear-code-quality-review`
 
 - Source: https://github.com/cursor/plugins/tree/main/cursor-team-kit/skills/thermo-nuclear-code-quality-review
