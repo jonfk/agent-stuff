@@ -1,0 +1,7 @@
+interface:
+  display_name: "To PATCH.md"
+  short_description: "Document fork-specific patches"
+  default_prompt: "Use $to-patch-md to document or reapply fork-specific changes with PATCH.md."
+
+policy:
+  allow_implicit_invocation: false

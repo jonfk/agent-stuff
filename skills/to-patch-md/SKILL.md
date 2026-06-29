@@ -1,6 +1,7 @@
 ---
 name: to-patch-md
 description: use when working with a fork, updating a fork from upstream, resolving merge conflicts, or reimplementing fork behavior on clean upstream.
+disable-model-invocation: true
 ---
 
 <what-to-do>
