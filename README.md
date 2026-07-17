@@ -11,6 +11,23 @@
 - [`teach`](skills/teach) - stateful teaching workspace skill from [mattpocock/skills](https://github.com/mattpocock/skills/tree/694fa30311e02c2639942308513555e61ee84a6f/skills/productivity/teach)
 - [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review) - Experimental strict maintainability review skill from [cursor/plugins](https://github.com/cursor/plugins/tree/3347cbab5b54136f6fba0994c3a01a56f7fb7fca/cursor-team-kit/skills/thermo-nuclear-code-quality-review), with local modifications
 
+The `skills` directory contains broadly useful skills and is suitable for linking as
+`.agents/skills` so every agent can discover it.
+
+### Opt-in skill packs
+
+Specialized skills live outside the shared `skills` directory so they can be enabled
+only for projects that need them.
+
+- [`fiction`](skill-packs/fiction)
+  - [`fiction-codex`](skill-packs/fiction/fiction-codex) - Maintain compact, reusable story context
+  - [`fiction-plain-draft`](skill-packs/fiction/fiction-plain-draft) - Create scene contracts and structural drafts
+  - [`fiction-revision`](skill-packs/fiction/fiction-revision) - Revise structurally complete fiction drafts
+
+When a project needs a complete pack, use a small linking script or package manager
+to populate its real `.agents/skills` directory from both `skills/*` and the selected
+pack. This creates an overlay of skill sources and avoids maintaining links by hand.
+
 ### Manual-only skills
 
 Some skills should only run when explicitly requested, usually because they are workflow-specific and would be noisy if auto-selected. Support both agent conventions:
