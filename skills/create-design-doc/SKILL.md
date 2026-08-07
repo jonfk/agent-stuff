@@ -1,6 +1,6 @@
 ---
 name: create-design-doc
-description: Help write, refine, or review technical design docs, RFCs, architecture proposals, technical plans, and decision notes. Use for point-in-time technical proposals optimized for clear reasoning, trade-off analysis, and expert review.
+description: Use to create or update technical design docs, and architecture proposals. Use for point-in-time technical proposals optimized for clear reasoning, trade-off analysis, and expert review.
 disable-model-invocation: true
 ---
 # Design Docs

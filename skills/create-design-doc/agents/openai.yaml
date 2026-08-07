@@ -1,0 +1,7 @@
+interface:
+  display_name: "Create Design Doc"
+  short_description: "Create and review technical design docs"
+  default_prompt: "Use $create-design-doc to create or review a technical design document."
+
+policy:
+  allow_implicit_invocation: false
