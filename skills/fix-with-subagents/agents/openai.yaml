@@ -1,0 +1,7 @@
+interface:
+  display_name: "Fix with Subagents"
+  short_description: "Fix findings with fresh sequential subagents"
+  default_prompt: "Use $fix-with-subagents to process this ordered list of findings with fresh, isolated subagents."
+
+policy:
+  allow_implicit_invocation: false
