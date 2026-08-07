@@ -9,4 +9,4 @@ Use conventional commits convention for the commit subject. Use last several com
 
 If there are multiple options that are actually different, propose me a choice.
 
-Make sure to have my agreement before creating the commit.
+If the user gives you permission along with activating this skill, create the commit.
