@@ -4,8 +4,11 @@
 - [`grill-me`](skills/grill-me) - planning interview from [mattpocock/skills](https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md)
 - [`frontend-design`](skills/frontend-design) - from [anthropics/skills](https://github.com/anthropics/skills/blob/d230a6dd6eb1a0dbee9fec55e2f00a96e28dff81/skills/frontend-design/SKILL.md)
 - [`design-iterations`](skills/design-iterations) - Frontend design concepts exploration
-- [`improve-codebase-architecture`](skills/improve-codebase-architecture) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/b843cb5ea74b1fe5e58a0fc23cddef9e66076fb8/skills/engineering/improve-codebase-architecture)
-- [`grill-with-docs`](skills/grill-with-docs) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/grill-with-docs)
+- [`grilling`](skills/grilling) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/productivity/grilling)
+- [`domain-modeling`](skills/domain-modeling) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/domain-modeling)
+- [`codebase-design`](skills/codebase-design) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/codebase-design)
+- [`improve-codebase-architecture`](skills/improve-codebase-architecture) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/improve-codebase-architecture)
+- [`grill-with-docs`](skills/grill-with-docs) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/grill-with-docs)
 - [`tdd`](skills/tdd) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/tdd)
 - [`prototype`](skills/prototype) - from [mattpocock/skills](https://github.com/mattpocock/skills/tree/aaf2453fbdfe7a15c07f11d861224f34ab4b53cb/skills/engineering/prototype)
 - [`teach`](skills/teach) - stateful teaching workspace skill from [mattpocock/skills](https://github.com/mattpocock/skills/tree/694fa30311e02c2639942308513555e61ee84a6f/skills/productivity/teach)

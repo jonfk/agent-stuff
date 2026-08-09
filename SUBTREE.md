@@ -1,5 +1,125 @@
 # Vendored Code
 
+## `skills/grilling`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling
+- Imported from: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
+- Permalink: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/productivity/grilling
+- Ref: `main`
+- Upstream subdirectory: `skills/productivity/grilling`
+- Split commit: `30a6da0b967a0ea92f6df3d6a15a2001f1437355`
+- Mode: `--squash`
+- Local path: `skills/grilling`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/mattpocock/skills.git main
+git switch -c tmp-mattpocock-skills-grilling FETCH_HEAD
+git subtree split -P skills/productivity/grilling -b tmp-mattpocock-grilling-split
+git switch main
+git subtree pull --prefix=skills/grilling tmp-mattpocock-grilling-split --squash
+git branch -D tmp-mattpocock-skills-grilling tmp-mattpocock-grilling-split
+```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
+## `skills/domain-modeling`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling
+- Imported from: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
+- Permalink: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/domain-modeling
+- Ref: `main`
+- Upstream subdirectory: `skills/engineering/domain-modeling`
+- Split commit: `71e05dbeb1334d8bd1ab8fe15ab9203ab2409596`
+- Mode: `--squash`
+- Local path: `skills/domain-modeling`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/mattpocock/skills.git main
+git switch -c tmp-mattpocock-skills-domain-modeling FETCH_HEAD
+git subtree split -P skills/engineering/domain-modeling -b tmp-mattpocock-domain-modeling-split
+git switch main
+git subtree pull --prefix=skills/domain-modeling tmp-mattpocock-domain-modeling-split --squash
+git branch -D tmp-mattpocock-skills-domain-modeling tmp-mattpocock-domain-modeling-split
+```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
+## `skills/codebase-design`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/codebase-design
+- Imported from: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
+- Permalink: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/codebase-design
+- Ref: `main`
+- Upstream subdirectory: `skills/engineering/codebase-design`
+- Split commit: `1cc8b7c4e89c3fc70506b717ee4d07acabbc21ad`
+- Mode: `--squash`
+- Local path: `skills/codebase-design`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/mattpocock/skills.git main
+git switch -c tmp-mattpocock-skills-codebase-design FETCH_HEAD
+git subtree split -P skills/engineering/codebase-design -b tmp-mattpocock-codebase-design-split
+git switch main
+git subtree pull --prefix=skills/codebase-design tmp-mattpocock-codebase-design-split --squash
+git branch -D tmp-mattpocock-skills-codebase-design tmp-mattpocock-codebase-design-split
+```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
+## `skills/grill-with-docs`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs
+- Imported from: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
+- Permalink: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/grill-with-docs
+- Ref: `main`
+- Upstream subdirectory: `skills/engineering/grill-with-docs`
+- Split commit: `0e806c0ad9c983e9434868788e33d55ac4476dc6`
+- Mode: `--squash`
+- Local path: `skills/grill-with-docs`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/mattpocock/skills.git main
+git switch -c tmp-mattpocock-skills-grill-with-docs FETCH_HEAD
+git subtree split -P skills/engineering/grill-with-docs -b tmp-mattpocock-grill-with-docs-split
+git switch main
+git subtree pull --prefix=skills/grill-with-docs tmp-mattpocock-grill-with-docs-split --squash
+git branch -D tmp-mattpocock-skills-grill-with-docs tmp-mattpocock-grill-with-docs-split
+```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
+## `skills/improve-codebase-architecture`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture
+- Imported from: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
+- Permalink: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/improve-codebase-architecture
+- Ref: `main`
+- Upstream subdirectory: `skills/engineering/improve-codebase-architecture`
+- Split commit: `07dbb0d3c1388b5dc07f4b19254ecc9856cc0f55`
+- Mode: `--squash`
+- Local path: `skills/improve-codebase-architecture`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/mattpocock/skills.git main
+git switch -c tmp-mattpocock-skills-improve-codebase-architecture FETCH_HEAD
+git subtree split -P skills/engineering/improve-codebase-architecture -b tmp-mattpocock-improve-codebase-architecture-split
+git switch main
+git subtree pull --prefix=skills/improve-codebase-architecture tmp-mattpocock-improve-codebase-architecture-split --squash
+git branch -D tmp-mattpocock-skills-improve-codebase-architecture tmp-mattpocock-improve-codebase-architecture-split
+```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
 ## `skills/tdd`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/tdd
@@ -147,5 +267,3 @@ After updating vendored code, refresh the commit and permalink here and in `READ
 
 - `skills/grill-me`
 - `skills/frontend-design`
-- `skills/improve-codebase-architecture`
-- `skills/grill-with-docs`
