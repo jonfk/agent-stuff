@@ -1,6 +1,6 @@
 ---
 name: git-subtree
-description: Vendor or update external code with git subtree, then create or update the nearest relevant SUBTREE.md record. Use when asked to vendor, import, refresh, or document third-party code with git subtree.
+description: Use only when editing a SUBTREE.md file. A SUBTREE.md file manages documentation and metadata about vendored external code in a repo.
 ---
 
 # Git Subtree Vendoring
