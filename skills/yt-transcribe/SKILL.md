@@ -1,5 +1,5 @@
 ---
-name: yt-transcript
+name: yt-transcribe
 description: transcribe youtube videos by extracting existing captions or subtitles with a bundled yt-dlp based script. use when the user provides a youtube url and wants a transcript.
 ---
 
