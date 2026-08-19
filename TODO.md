@@ -1,6 +1,7 @@
 # TODO
 
 - [ ] Remove this TODO.md file once all todos are done
+- [ ] Remove the `upstream audit`, `update recommendation`, `removed skills`, `to try` sections from README
 
 ## Skill updates
 
