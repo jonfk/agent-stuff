@@ -11,6 +11,22 @@ with `$skill-name`. "Implicit" means eligible for automatic selection, not that
 Codex will select it for every matching prompt. See the
 [official skill invocation documentation](https://learn.chatgpt.com/docs/build-skills#how-chatgpt-and-codex-use-skills).
 
+### Matt Pocock architecture suite
+
+These skills form one cooperating architecture workflow imported directly from
+[`mattpocock/skills`](https://github.com/mattpocock/skills):
+
+- `improve-codebase-architecture` orchestrates the architecture review.
+- `codebase-design` supplies the deep-module vocabulary and design principles.
+- `domain-modeling` maintains the resulting domain language and decisions.
+- `grilling` drives the interactive design discussion.
+
+Treat these four skills as an **atomic update cohort**. They evolve together
+upstream and cross-reference one another, so update and review all four from the
+same upstream commit. Do not advance one member independently unless it is being
+intentionally separated and documented as a local fork. See
+[`SUBTREE.md`](SUBTREE.md) for the pinned upstream snapshot and update procedure.
+
 ### Shared skill inventory
 
 | Skill | Codex invocation | Origin |

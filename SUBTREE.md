@@ -1,5 +1,32 @@
 # Vendored Code
 
+## Update cohorts
+
+### Matt Pocock architecture suite
+
+The following skills form one cooperating architecture workflow and are vendored
+directly from [`mattpocock/skills`](https://github.com/mattpocock/skills):
+
+- `skills/improve-codebase-architecture`
+- `skills/codebase-design`
+- `skills/domain-modeling`
+- `skills/grilling`
+
+- Upstream: https://github.com/mattpocock/skills.git
+- Ref: `main`
+- Pinned upstream commit: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
+- Update policy: **atomic**
+
+Each member remains a separate subtree because it comes from a different upstream
+subdirectory, but the four members are one update cohort. Fetch upstream once,
+split every member from the same fetched commit, apply and review all four subtree
+updates together, and commit them as one change. Refresh the pinned commit above
+and every member's subtree metadata in this file and `README.md`.
+
+Do not advance one member independently. If a member needs to remain pinned or
+receive local changes, explicitly document it as a local fork and remove it from
+this cohort first.
+
 ## `skills/grilling`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling
