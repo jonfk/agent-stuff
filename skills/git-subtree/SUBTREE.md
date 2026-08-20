@@ -20,3 +20,15 @@ git subtree pull \
   main \
   --squash
 ```
+
+## Maintenance groups
+
+Only include this section when multiple subtrees must be maintained together.
+
+### `example-lib-group`
+
+- **Reason:** The members depend on each other and must use matching upstream code.
+- **Members:**
+  - `vendor/example-lib`
+  - `vendor/example-lib-adapters`
+- **Constraint:** Import every member from the same upstream ref or commit and update every member as part of the same change.
