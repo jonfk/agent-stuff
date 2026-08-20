@@ -31,21 +31,21 @@ intentionally separated and documented as a local fork. See
 
 | Skill | Codex invocation | Origin |
 | --- | --- | --- |
-| [`codebase-design`](skills/codebase-design) | Implicit | [mattpocock/skills @ `84fdeff`](https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/codebase-design) |
+| [`anthropic-frontend-design`](skills/anthropic-frontend-design) | **Manual-only** | [anthropics/skills @ `0a64e39`](https://github.com/anthropics/skills/tree/0a64e398ec6bb34a494f0c347e8ccae53a862f8e/skills/frontend-design); split `8279059`; locally renamed |
+| [`codebase-design`](skills/codebase-design) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/codebase-design); split `afd7936` |
 | [`create-design-doc`](skills/create-design-doc) | **Manual-only** | Local |
 | [`design-iterations`](skills/design-iterations) | Implicit | Local evolution of `vite-design-iterations`; no upstream recorded |
-| [`domain-modeling`](skills/domain-modeling) | Implicit | [mattpocock/skills @ `84fdeff`](https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/domain-modeling) |
+| [`domain-modeling`](skills/domain-modeling) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/domain-modeling); split `e7bce7a` |
 | [`fix-with-subagents`](skills/fix-with-subagents) | **Manual-only** | Local |
-| [`frontend-design`](skills/frontend-design) | Implicit | [anthropics/skills @ `d230a6d`](https://github.com/anthropics/skills/tree/d230a6dd6eb1a0dbee9fec55e2f00a96e28dff81/skills/frontend-design) |
-| [`frontend-design-mitsuhiko`](skills/frontend-design-mitsuhiko) | Implicit | [mitsuhiko/agent-stuff @ `b861028`](https://github.com/mitsuhiko/agent-stuff/tree/b861028c706edf3e3f983cde09dd8cc8549ec948/skills/frontend-design), locally renamed |
+| [`frontend-design-mitsuhiko`](skills/frontend-design-mitsuhiko) | **Manual-only** | [mitsuhiko/agent-stuff @ `b861028`](https://github.com/mitsuhiko/agent-stuff/tree/b861028c706edf3e3f983cde09dd8cc8549ec948/skills/frontend-design), locally renamed |
 | [`git-subtree`](skills/git-subtree) | Implicit | Local |
-| [`grill-me`](skills/grill-me) | Implicit | Adapted from [mattpocock/skills @ `60aa99c`](https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md) |
-| [`grill-with-docs`](skills/grill-with-docs) | **Manual-only** | [mattpocock/skills @ `84fdeff`](https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/grill-with-docs) |
-| [`grilling`](skills/grilling) | Implicit | [mattpocock/skills @ `84fdeff`](https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/productivity/grilling) |
-| [`improve-codebase-architecture`](skills/improve-codebase-architecture) | **Manual-only** | [mattpocock/skills @ `84fdeff`](https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/improve-codebase-architecture) |
+| [`grill-me`](skills/grill-me) | **Manual-only** | Maintained local fork of [mattpocock/skills @ `60aa99c`](https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md); diverged locally at `fb2dd08` and must not be updated from upstream |
+| [`grill-with-docs`](skills/grill-with-docs) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/grill-with-docs); split `70b6090` |
+| [`grilling`](skills/grilling) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/productivity/grilling); split `132f55a`; local manual-only policy |
+| [`improve-codebase-architecture`](skills/improve-codebase-architecture) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/improve-codebase-architecture); split `2d8ac8c` |
 | [`propose-commit`](skills/propose-commit) | Implicit | Local |
-| [`prototype`](skills/prototype) | Implicit | [mattpocock/skills @ `aaf2453`](https://github.com/mattpocock/skills/tree/aaf2453fbdfe7a15c07f11d861224f34ab4b53cb/skills/engineering/prototype) |
-| [`tdd`](skills/tdd) | Implicit | [mattpocock/skills @ `733d312`](https://github.com/mattpocock/skills/tree/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/tdd) |
+| [`prototype`](skills/prototype) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/prototype); split `56dafec` |
+| [`tdd`](skills/tdd) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/tdd); split `54cfb36` |
 | [`teach`](skills/teach) | **Manual-only** | [mattpocock/skills @ `694fa30`](https://github.com/mattpocock/skills/tree/694fa30311e02c2639942308513555e61ee84a6f/skills/productivity/teach) |
 | [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review) | Implicit in Codex; manual-only in Claude Code | [cursor/plugins @ `3347cba`](https://github.com/cursor/plugins/tree/3347cbab5b54136f6fba0994c3a01a56f7fb7fca/cursor-team-kit/skills/thermo-nuclear-code-quality-review), substantially rewritten locally |
 | [`to-patch-md`](skills/to-patch-md) | **Manual-only** | Local |
@@ -85,9 +85,6 @@ Current inventory issues:
 - `thermo-nuclear-code-quality-review` has `disable-model-invocation: true` for
   Claude Code but no Codex `allow_implicit_invocation: false` policy. Its current
   cross-agent behavior is therefore inconsistent.
-- The descriptions of `frontend-design` and `frontend-design-mitsuhiko` overlap,
-  as do `grill-me` and `grilling`. Any of them may be selected implicitly for the
-  same prompt; use explicit invocation when the choice matters.
 
 ### Upstream audit
 

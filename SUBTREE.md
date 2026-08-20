@@ -14,7 +14,7 @@ directly from [`mattpocock/skills`](https://github.com/mattpocock/skills):
 
 - Upstream: https://github.com/mattpocock/skills.git
 - Ref: `main`
-- Pinned upstream commit: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
+- Pinned upstream commit: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
 - Update policy: **atomic**
 
 Each member remains a separate subtree because it comes from a different upstream
@@ -23,18 +23,49 @@ split every member from the same fetched commit, apply and review all four subtr
 updates together, and commit them as one change. Refresh the pinned commit above
 and every member's subtree metadata in this file and `README.md`.
 
-Do not advance one member independently. If a member needs to remain pinned or
-receive local changes, explicitly document it as a local fork and remove it from
-this cohort first.
+Do not advance one member independently. Narrow, documented packaging overlays
+such as invocation policy may remain in the cohort and must be preserved after
+updates. If a member needs behavioral changes or a different upstream pin,
+document it as a local fork and remove it from this cohort first.
+
+## `skills/anthropic-frontend-design`
+
+- Source: https://github.com/anthropics/skills/tree/main/skills/frontend-design
+- Imported from: `0a64e398ec6bb34a494f0c347e8ccae53a862f8e`
+- Permalink: https://github.com/anthropics/skills/tree/0a64e398ec6bb34a494f0c347e8ccae53a862f8e/skills/frontend-design
+- Ref: `main`
+- Upstream subdirectory: `skills/frontend-design`
+- Split commit: `8279059424032d99a429ff7a9cef0b368deeb970`
+- Mode: `--squash`
+- Local path: `skills/anthropic-frontend-design`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/anthropics/skills.git main
+git switch -c tmp-anthropics-skills-frontend-design FETCH_HEAD
+git subtree split -P skills/frontend-design -b tmp-anthropics-frontend-design-split
+git switch -
+git subtree pull --prefix=skills/anthropic-frontend-design . tmp-anthropics-frontend-design-split --squash
+git branch -D tmp-anthropics-skills-frontend-design tmp-anthropics-frontend-design-split
+```
+
+Local overlays: the local skill and directory are renamed to
+`anthropic-frontend-design`, and the skill is manual-only in both Claude Code
+and Codex. After updates, preserve the `name` and
+`disable-model-invocation: true` fields in `SKILL.md` and
+`policy.allow_implicit_invocation: false` in `agents/openai.yaml`.
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
 
 ## `skills/grilling`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling
-- Imported from: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
-- Permalink: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/productivity/grilling
+- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
+- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/productivity/grilling
 - Ref: `main`
 - Upstream subdirectory: `skills/productivity/grilling`
-- Split commit: `30a6da0b967a0ea92f6df3d6a15a2001f1437355`
+- Split commit: `132f55a83e75f038aca6c871b1602428870831a0`
 - Mode: `--squash`
 - Local path: `skills/grilling`
 
@@ -44,21 +75,25 @@ This is a subtree of an upstream subdirectory, not the upstream repo root. To up
 git fetch https://github.com/mattpocock/skills.git main
 git switch -c tmp-mattpocock-skills-grilling FETCH_HEAD
 git subtree split -P skills/productivity/grilling -b tmp-mattpocock-grilling-split
-git switch main
-git subtree pull --prefix=skills/grilling tmp-mattpocock-grilling-split --squash
+git switch -
+git subtree pull --prefix=skills/grilling . tmp-mattpocock-grilling-split --squash
 git branch -D tmp-mattpocock-skills-grilling tmp-mattpocock-grilling-split
 ```
 
 After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
 
+Local overlay: this skill is manual-only in both Claude Code and Codex. Preserve
+`disable-model-invocation: true` in `SKILL.md` and
+`policy.allow_implicit_invocation: false` in `agents/openai.yaml` after updates.
+
 ## `skills/domain-modeling`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling
-- Imported from: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
-- Permalink: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/domain-modeling
+- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
+- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/domain-modeling
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/domain-modeling`
-- Split commit: `71e05dbeb1334d8bd1ab8fe15ab9203ab2409596`
+- Split commit: `e7bce7aa4058f69dd903202390764117d6f343c7`
 - Mode: `--squash`
 - Local path: `skills/domain-modeling`
 
@@ -68,8 +103,8 @@ This is a subtree of an upstream subdirectory, not the upstream repo root. To up
 git fetch https://github.com/mattpocock/skills.git main
 git switch -c tmp-mattpocock-skills-domain-modeling FETCH_HEAD
 git subtree split -P skills/engineering/domain-modeling -b tmp-mattpocock-domain-modeling-split
-git switch main
-git subtree pull --prefix=skills/domain-modeling tmp-mattpocock-domain-modeling-split --squash
+git switch -
+git subtree pull --prefix=skills/domain-modeling . tmp-mattpocock-domain-modeling-split --squash
 git branch -D tmp-mattpocock-skills-domain-modeling tmp-mattpocock-domain-modeling-split
 ```
 
@@ -78,11 +113,11 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/codebase-design`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/codebase-design
-- Imported from: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
-- Permalink: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/codebase-design
+- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
+- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/codebase-design
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/codebase-design`
-- Split commit: `1cc8b7c4e89c3fc70506b717ee4d07acabbc21ad`
+- Split commit: `afd7936f40d5b9f7667ebe6f38e85fbc8bc41d6e`
 - Mode: `--squash`
 - Local path: `skills/codebase-design`
 
@@ -92,8 +127,8 @@ This is a subtree of an upstream subdirectory, not the upstream repo root. To up
 git fetch https://github.com/mattpocock/skills.git main
 git switch -c tmp-mattpocock-skills-codebase-design FETCH_HEAD
 git subtree split -P skills/engineering/codebase-design -b tmp-mattpocock-codebase-design-split
-git switch main
-git subtree pull --prefix=skills/codebase-design tmp-mattpocock-codebase-design-split --squash
+git switch -
+git subtree pull --prefix=skills/codebase-design . tmp-mattpocock-codebase-design-split --squash
 git branch -D tmp-mattpocock-skills-codebase-design tmp-mattpocock-codebase-design-split
 ```
 
@@ -102,11 +137,11 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/grill-with-docs`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs
-- Imported from: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
-- Permalink: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/grill-with-docs
+- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
+- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/grill-with-docs
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/grill-with-docs`
-- Split commit: `0e806c0ad9c983e9434868788e33d55ac4476dc6`
+- Split commit: `70b6090e254b07cf376a40033d44bcf6cff9fff4`
 - Mode: `--squash`
 - Local path: `skills/grill-with-docs`
 
@@ -116,8 +151,8 @@ This is a subtree of an upstream subdirectory, not the upstream repo root. To up
 git fetch https://github.com/mattpocock/skills.git main
 git switch -c tmp-mattpocock-skills-grill-with-docs FETCH_HEAD
 git subtree split -P skills/engineering/grill-with-docs -b tmp-mattpocock-grill-with-docs-split
-git switch main
-git subtree pull --prefix=skills/grill-with-docs tmp-mattpocock-grill-with-docs-split --squash
+git switch -
+git subtree pull --prefix=skills/grill-with-docs . tmp-mattpocock-grill-with-docs-split --squash
 git branch -D tmp-mattpocock-skills-grill-with-docs tmp-mattpocock-grill-with-docs-split
 ```
 
@@ -126,11 +161,11 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/improve-codebase-architecture`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture
-- Imported from: `84fdeffd12f2ee307994d1eb6feb48173b6e0502`
-- Permalink: https://github.com/mattpocock/skills/tree/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/improve-codebase-architecture
+- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
+- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/improve-codebase-architecture
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/improve-codebase-architecture`
-- Split commit: `07dbb0d3c1388b5dc07f4b19254ecc9856cc0f55`
+- Split commit: `2d8ac8c6a475d0ff81895743dc102b9a531464e5`
 - Mode: `--squash`
 - Local path: `skills/improve-codebase-architecture`
 
@@ -140,8 +175,8 @@ This is a subtree of an upstream subdirectory, not the upstream repo root. To up
 git fetch https://github.com/mattpocock/skills.git main
 git switch -c tmp-mattpocock-skills-improve-codebase-architecture FETCH_HEAD
 git subtree split -P skills/engineering/improve-codebase-architecture -b tmp-mattpocock-improve-codebase-architecture-split
-git switch main
-git subtree pull --prefix=skills/improve-codebase-architecture tmp-mattpocock-improve-codebase-architecture-split --squash
+git switch -
+git subtree pull --prefix=skills/improve-codebase-architecture . tmp-mattpocock-improve-codebase-architecture-split --squash
 git branch -D tmp-mattpocock-skills-improve-codebase-architecture tmp-mattpocock-improve-codebase-architecture-split
 ```
 
@@ -150,26 +185,35 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/tdd`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/tdd
-- Imported from: `733d312884b3878a9a9cff693c5886943753a741`
-- Permalink: https://github.com/mattpocock/skills/tree/733d312884b3878a9a9cff693c5886943753a741/skills/engineering/tdd
+- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
+- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/tdd
+- Ref: `main`
+- Upstream subdirectory: `skills/engineering/tdd`
+- Split commit: `54cfb36c807d6ce276a5675c3b31dc9cfcf196b8`
+- Mode: `--squash`
+- Local path: `skills/tdd`
 
 This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
 
 ```bash
 git fetch https://github.com/mattpocock/skills.git main
-git switch -c tmp-mattpocock-skills FETCH_HEAD
+git switch -c tmp-mattpocock-skills-tdd FETCH_HEAD
 git subtree split -P skills/engineering/tdd -b tmp-mattpocock-tdd-split
-git switch main
-git subtree pull --prefix=skills/tdd tmp-mattpocock-tdd-split --squash
-git branch -D tmp-mattpocock-skills tmp-mattpocock-tdd-split
+git switch -
+git subtree pull --prefix=skills/tdd . tmp-mattpocock-tdd-split --squash
+git branch -D tmp-mattpocock-skills-tdd tmp-mattpocock-tdd-split
 ```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
 
 ## `skills/prototype`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype
-- Imported from: `aaf2453fbdfe7a15c07f11d861224f34ab4b53cb`
-- Permalink: https://github.com/mattpocock/skills/tree/aaf2453fbdfe7a15c07f11d861224f34ab4b53cb/skills/engineering/prototype
+- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
+- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/prototype
 - Ref: `main`
+- Upstream subdirectory: `skills/engineering/prototype`
+- Split commit: `56dafec78765f00989c6075dc5393e9a49a4ae68`
 - Mode: `--squash`
 - Local path: `skills/prototype`
 
@@ -177,12 +221,14 @@ This is a subtree of an upstream subdirectory, not the upstream repo root. To up
 
 ```bash
 git fetch https://github.com/mattpocock/skills.git main
-git switch -c tmp-mattpocock-skills FETCH_HEAD
+git switch -c tmp-mattpocock-skills-prototype FETCH_HEAD
 git subtree split -P skills/engineering/prototype -b tmp-mattpocock-prototype-split
-git switch main
-git subtree pull --prefix=skills/prototype tmp-mattpocock-prototype-split --squash
-git branch -D tmp-mattpocock-skills tmp-mattpocock-prototype-split
+git switch -
+git subtree pull --prefix=skills/prototype . tmp-mattpocock-prototype-split --squash
+git branch -D tmp-mattpocock-skills-prototype tmp-mattpocock-prototype-split
 ```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
 
 ## `skills/teach`
 
@@ -290,7 +336,19 @@ git branch -D tmp-tifandotme-pi-extensions tmp-tifandotme-pi-inline-skills-split
 
 After updating vendored code, refresh the commit and permalink here and in `README.md`.
 
-## Not Yet Documented As Subtrees
+## Locally maintained copies
 
-- `skills/grill-me`
-- `skills/frontend-design`
+### `skills/grill-me`
+
+- Source: https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md
+- Source snapshot: `60aa99c0230fbac087514ba5fca2ae6e519965fe`
+- Initially copied in local commit: `cb7c6587bb664e14da85c4b9ed3bce1a71431619`
+- Local divergence began in commit: `fb2dd08dd86f53e9af41a1b96456a5940d2c641a`
+- Local path: `skills/grill-me`
+- Update policy: **do not update from upstream**
+
+This is a maintained local fork, not a subtree. Upstream later moved `grill-me`
+and changed it into a manual-only wrapper around `grilling`; this fork retains
+its distinct interview behavior. It is manual-only in both Claude Code and
+Codex through `disable-model-invocation: true` in `SKILL.md` and
+`policy.allow_implicit_invocation: false` in `agents/openai.yaml`.
