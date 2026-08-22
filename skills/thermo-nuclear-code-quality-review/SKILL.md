@@ -34,7 +34,15 @@ Do not propose a redesign that violates a real constraint. State uncertainty whe
 
 Actively question whether an apparent requirement is essential. A stronger or better-placed constraint may allow the implementation to become substantially simpler.
 
-### 2. Search for the simpler model
+### 2. Account for decision history
+
+Before producing findings, inspect how the affected design reached its current state. Account for relevant prior attempts, reversals, and tradeoffs, treating history as evidence rather than authority.
+
+Do not recommend returning to a previously rejected or replaced approach without explaining what new evidence justifies revisiting it. If the rationale for the current design is unclear, state the uncertainty rather than presenting the alternative as a high-confidence finding.
+
+On follow-up reviews, reconcile earlier findings and explicitly explain any reversal in direction.
+
+### 3. Search for the simpler model
 
 For every meaningful change, ask:
 
@@ -52,7 +60,7 @@ Do not extract a helper or introduce an abstraction unless it creates a clearer 
 
 When proposing a larger restructuring, explain exactly what it removes: concepts, branches, states, dependencies, ownership ambiguity, failure modes, or duplicated knowledge.
 
-### 3. Review from multiple angles
+### 4. Review from multiple angles
 
 #### State and control flow
 
@@ -135,7 +143,7 @@ Look for:
 
 Suggest parallelism or atomic restructuring only when ordering, failure, cancellation, and consistency semantics are understood—and only when the resulting flow is simpler.
 
-### 4. Report all material findings
+### 5. Report all material findings
 
 Scan broadly and report every finding with meaningful maintenance value. Group repeated symptoms under their common root cause.
 
