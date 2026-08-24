@@ -1,7 +1,7 @@
 
 ## Skills
 
-The repository contains 22 tracked skills: 19 broadly useful skills under `skills/`
+The repository contains 19 tracked skills: 16 broadly useful skills under `skills/`
 and 3 opt-in fiction skills under `skill-packs/fiction/`.
 
 Codex can invoke a skill implicitly when the task matches its `description`. A
@@ -34,7 +34,6 @@ intentionally separated and documented as a local fork. See
 | [`anthropic-frontend-design`](skills/anthropic-frontend-design) | **Manual-only** | [anthropics/skills @ `0a64e39`](https://github.com/anthropics/skills/tree/0a64e398ec6bb34a494f0c347e8ccae53a862f8e/skills/frontend-design); split `8279059`; locally renamed |
 | [`codebase-design`](skills/codebase-design) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/codebase-design); split `afd7936` |
 | [`create-design-doc`](skills/create-design-doc) | **Manual-only** | Local |
-| [`design-iterations`](skills/design-iterations) | Implicit | Local evolution of `vite-design-iterations`; no upstream recorded |
 | [`domain-modeling`](skills/domain-modeling) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/domain-modeling); split `e7bce7a` |
 | [`fix-with-subagents`](skills/fix-with-subagents) | **Manual-only** | Local |
 | [`frontend-design-mitsuhiko`](skills/frontend-design-mitsuhiko) | **Manual-only** | [mitsuhiko/agent-stuff @ `b861028`](https://github.com/mitsuhiko/agent-stuff/tree/b861028c706edf3e3f983cde09dd8cc8549ec948/skills/frontend-design), locally renamed |
@@ -46,10 +45,8 @@ intentionally separated and documented as a local fork. See
 | [`propose-commit`](skills/propose-commit) | Implicit | Local |
 | [`prototype`](skills/prototype) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/prototype); split `56dafec` |
 | [`tdd`](skills/tdd) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/tdd); split `54cfb36` |
-| [`teach`](skills/teach) | **Manual-only** | [mattpocock/skills @ `694fa30`](https://github.com/mattpocock/skills/tree/694fa30311e02c2639942308513555e61ee84a6f/skills/productivity/teach) |
 | [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review) | Implicit in Codex; manual-only in Claude Code | [cursor/plugins @ `3347cba`](https://github.com/cursor/plugins/tree/3347cbab5b54136f6fba0994c3a01a56f7fb7fca/cursor-team-kit/skills/thermo-nuclear-code-quality-review), substantially rewritten locally |
-| [`to-patch-md`](skills/to-patch-md) | **Manual-only** | Local |
-| [`yt-transcript`](skills/yt-transcribe) | Implicit | Local |
+| [`yt-transcribe`](skills/yt-transcribe) | Implicit | Local |
 
 The `skills` directory contains broadly useful skills and is suitable for linking as
 `.agents/skills` so every agent can discover it.
@@ -64,6 +61,9 @@ only for projects that need them.
 | [`fiction-codex`](skill-packs/fiction/fiction-codex) | **Invalid frontmatter; not loadable until fixed** | Local |
 | [`fiction-plain-draft`](skill-packs/fiction/fiction-plain-draft) | Implicit when the pack is enabled | Local |
 | [`fiction-revision`](skill-packs/fiction/fiction-revision) | Implicit when the pack is enabled | Local |
+
+Validate the inventory links, documented totals, and skill frontmatter with
+`ruby scripts/check-skill-inventory.rb`.
 
 When a project needs a complete pack, use a small linking script or package manager
 to populate its real `.agents/skills` directory from both `skills/*` and the selected
