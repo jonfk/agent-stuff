@@ -88,12 +88,14 @@ Current inventory issues:
 
 ## Pi Extensions
 
-This repo is a Pi package for extensions only. Skills are intentionally not exposed through the Pi package manifest because they are managed separately with `skills.sh`.
+This repository contains independently installable Pi extensions.
 
-Install the extension package from git:
+From the repository root, install the extensions locally:
 
 ```bash
-pi install git:github.com/jonfk/agent-stuff
+pi install ./pi-extensions/pi-telegram
+pi install ./pi-extensions/pi-inline-skills
+pi install ./pi-extensions/preset
 ```
 
 Vendored code subtree metadata and update notes live in [`SUBTREE.md`](SUBTREE.md).
