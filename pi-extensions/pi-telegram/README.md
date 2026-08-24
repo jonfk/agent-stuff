@@ -2,7 +2,12 @@
 
 ![pi-telegram screenshot](screenshot.png)
 
-This repository is an actively maintained fork of [`badlogic/pi-telegram`](https://github.com/badlogic/pi-telegram). It started from upstream commit [`cb34008460b6c1ca036d92322f69d87f626be0fc`](https://github.com/badlogic/pi-telegram/commit/cb34008460b6c1ca036d92322f69d87f626be0fc) and has since diverged substantially.
+This directory is a historical snapshot of the actively maintained
+[`llblab/pi-telegram`](https://github.com/llblab/pi-telegram) fork of
+[`badlogic/pi-telegram`](https://github.com/badlogic/pi-telegram). The fork started
+from upstream commit
+[`cb34008460b6c1ca036d92322f69d87f626be0fc`](https://github.com/badlogic/pi-telegram/commit/cb34008460b6c1ca036d92322f69d87f626be0fc)
+and has since diverged substantially.
 
 ## Start Here
 
@@ -21,18 +26,29 @@ This repository is an actively maintained fork of [`badlogic/pi-telegram`](https
 - **File Handling & Attachments**: Send images and files to the agent, transcribe or transform inbound text/media with configured inbound handlers, or ask π to generate and return artifacts. Inbound downloads and outbound attachments are size-limited by default, and outbound files are delivered automatically via the `telegram_attach` tool.
 - **Streaming Responses**: Closed Markdown blocks stream back as rich Telegram HTML while π is generating, and the still-growing tail stays readable until the final fully rendered reply lands.
 
-## Install
+## Snapshot provenance and installation
 
-From npm:
+This directory pins package version 0.9.3 from
+[`llblab/pi-telegram` commit `c1b253a`](https://github.com/llblab/pi-telegram/tree/c1b253aeb05604e3adc70bf8642011fea1113c2c).
+Its runtime code is unchanged from that historical upstream snapshot. Current
+upstream releases are substantially newer and may differ from the behavior
+documented in this README.
+
+### Install this repository snapshot
+
+From the root of this repository:
+
+```bash
+pi install ./pi-extensions/pi-telegram
+```
+
+### Install current upstream
+
+To install the latest published upstream package, follow the
+[current upstream documentation](https://github.com/llblab/pi-telegram):
 
 ```bash
 pi install npm:@llblab/pi-telegram
-```
-
-From git:
-
-```bash
-pi install git:github.com/llblab/pi-telegram
 ```
 
 ## Configure

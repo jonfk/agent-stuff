@@ -4,16 +4,31 @@ Pi extension for named presets that can set model, thinking level, tools, and pe
 
 Part of [`pi-extensions`](../../README.md).
 
-## Install with pi
+## Snapshot provenance and installation
+
+This directory began as a vendored snapshot of
+[`@richardgill/pi-preset` 0.0.6](https://github.com/richardgill/pi-extensions/tree/7e09e5371d8a7fa8d90adc91273503b68bcf6c61/extensions/preset)
+and is now a local fork. It adds project-local preset configuration and
+per-preset `systemPrompt` overrides after the upstream snapshot was imported.
+
+### Install this repository snapshot
+
+From the root of this repository:
+
+```bash
+pi install ./pi-extensions/preset
+```
+
+This installs the local features documented below.
+
+### Install current upstream
+
+The npm package is maintained separately and should not be assumed to contain
+this fork's local features. To install current upstream, follow the
+[upstream documentation](https://github.com/richardgill/pi-extensions/tree/main/extensions/preset):
 
 ```bash
 pi install npm:@richardgill/pi-preset
-```
-
-or locally
-
-```bash
-pi install ~/code/pi-extensions/main/extensions/preset
 ```
 
 ## Configure
