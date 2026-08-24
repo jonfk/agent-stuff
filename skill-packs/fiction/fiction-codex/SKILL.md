@@ -1,6 +1,6 @@
 ---
 name: fiction-codex
-description: Create and maintain a compact fiction codex for reusable story context: premise, characters, locations, timeline, world facts, tone notes, motifs, and open questions.
+description: "Create and maintain a compact fiction codex for reusable story context: premise, characters, locations, timeline, world facts, tone notes, motifs, and open questions."
 ---
 
 # Fiction Codex

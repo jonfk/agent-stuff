@@ -58,7 +58,7 @@ only for projects that need them.
 
 | Skill | Codex invocation | Origin |
 | --- | --- | --- |
-| [`fiction-codex`](skill-packs/fiction/fiction-codex) | **Invalid frontmatter; not loadable until fixed** | Local |
+| [`fiction-codex`](skill-packs/fiction/fiction-codex) | Implicit when the pack is enabled | Local |
 | [`fiction-plain-draft`](skill-packs/fiction/fiction-plain-draft) | Implicit when the pack is enabled | Local |
 | [`fiction-revision`](skill-packs/fiction/fiction-revision) | Implicit when the pack is enabled | Local |
 
@@ -77,11 +77,6 @@ Some skills should only run when explicitly requested, usually because they are 
 - Codex: add `policy.allow_implicit_invocation: false` to `agents/openai.yaml`.
 
 Keep both settings together for shared skills so manual invocation works in both tools.
-
-Current inventory issues:
-
-- `fiction-codex` has an unquoted colon in its YAML `description`, so strict YAML
-  parsers reject the skill.
 
 ## Pi Extensions
 
