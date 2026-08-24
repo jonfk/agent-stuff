@@ -45,7 +45,7 @@ intentionally separated and documented as a local fork. See
 | [`propose-commit`](skills/propose-commit) | Implicit | Local |
 | [`prototype`](skills/prototype) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/prototype); split `56dafec` |
 | [`tdd`](skills/tdd) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/tdd); split `54cfb36` |
-| [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review) | Implicit in Codex; manual-only in Claude Code | [cursor/plugins @ `3347cba`](https://github.com/cursor/plugins/tree/3347cbab5b54136f6fba0994c3a01a56f7fb7fca/cursor-team-kit/skills/thermo-nuclear-code-quality-review), substantially rewritten locally |
+| [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review) | **Manual-only** | [cursor/plugins @ `3347cba`](https://github.com/cursor/plugins/tree/3347cbab5b54136f6fba0994c3a01a56f7fb7fca/cursor-team-kit/skills/thermo-nuclear-code-quality-review), substantially rewritten locally |
 | [`yt-transcribe`](skills/yt-transcribe) | Implicit | Local |
 
 The `skills` directory contains broadly useful skills and is suitable for linking as
@@ -82,9 +82,6 @@ Current inventory issues:
 
 - `fiction-codex` has an unquoted colon in its YAML `description`, so strict YAML
   parsers reject the skill.
-- `thermo-nuclear-code-quality-review` has `disable-model-invocation: true` for
-  Claude Code but no Codex `allow_implicit_invocation: false` policy. Its current
-  cross-agent behavior is therefore inconsistent.
 
 ## Pi Extensions
 

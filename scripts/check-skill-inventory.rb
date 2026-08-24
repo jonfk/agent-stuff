@@ -13,6 +13,7 @@ GROUPS = {
 
 errors = []
 readme = README.read
+frontmatter_by_directory = {}
 
 manifests_by_directory = GROUPS.values.flat_map { |pattern| Dir.glob(pattern.to_s) }
   .sort
@@ -38,12 +39,46 @@ manifests_by_directory = GROUPS.values.flat_map { |pattern| Dir.glob(pattern.to_
 
       name = frontmatter["name"]
       errors << "#{manifest.relative_path_from(ROOT)}: frontmatter name must be a non-empty string" unless name.is_a?(String) && !name.empty?
+      frontmatter_by_directory[directory] = frontmatter
       [directory, name]
     rescue Psych::Exception => error
       errors << "#{manifest.relative_path_from(ROOT)}: invalid YAML frontmatter (#{error.message.lines.first.strip})"
       [directory, nil]
     end
   end
+
+Dir.glob(GROUPS.fetch("Shared skill inventory").to_s).sort.each do |manifest_path|
+  manifest = Pathname.new(manifest_path)
+  directory = manifest.dirname.relative_path_from(ROOT).to_s
+  frontmatter = frontmatter_by_directory[directory]
+  next unless frontmatter
+
+  claude_manual_only = frontmatter["disable-model-invocation"] == true
+  openai_manifest = manifest.dirname.join("agents", "openai.yaml")
+  codex_manual_only = false
+
+  if openai_manifest.file?
+    begin
+      openai_config = YAML.safe_load(
+        openai_manifest.read, permitted_classes: [], permitted_symbols: [], aliases: false
+      )
+      unless openai_config.is_a?(Hash)
+        errors << "#{openai_manifest.relative_path_from(ROOT)}: configuration must be a mapping"
+        next
+      end
+      codex_manual_only = openai_config.dig("policy", "allow_implicit_invocation") == false
+    rescue Psych::Exception => error
+      errors << "#{openai_manifest.relative_path_from(ROOT)}: invalid YAML (#{error.message.lines.first.strip})"
+      next
+    end
+  end
+
+  next if claude_manual_only == codex_manual_only
+
+  errors << "#{directory}: manual-only invocation must set both " \
+            "SKILL.md disable-model-invocation: true and " \
+            "agents/openai.yaml policy.allow_implicit_invocation: false"
+end
 
 documented_by_directory = {}
 
