@@ -278,6 +278,30 @@ git branch -D tmp-cursor-thermo-nuclear-code-quality-review-split
 
 After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
 
+## `skills/show-me`
+
+- Source: https://github.com/humanlayer/skills/tree/main/plugins/show-me/skills/show-me
+- Imported from: `3c2629142c5d437428269b1b722b08c0b87f574d`
+- Permalink: https://github.com/humanlayer/skills/tree/3c2629142c5d437428269b1b722b08c0b87f574d/plugins/show-me/skills/show-me
+- Ref: `main`
+- Upstream subdirectory: `plugins/show-me/skills/show-me`
+- Split commit: `022e37536acbe67d6850a30678a3da7c74825fe7`
+- Mode: `--squash`
+- Local path: `skills/show-me`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/humanlayer/skills.git main
+git worktree add /private/tmp/humanlayer-skills-show-me FETCH_HEAD
+git -C /private/tmp/humanlayer-skills-show-me subtree split -P plugins/show-me/skills/show-me HEAD -b tmp-humanlayer-show-me-split
+git subtree pull --prefix=skills/show-me /private/tmp/humanlayer-skills-show-me tmp-humanlayer-show-me-split --squash
+git worktree remove /private/tmp/humanlayer-skills-show-me
+git branch -D tmp-humanlayer-show-me-split
+```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
 ## `pi-extensions/pi-telegram`
 
 - Source: https://github.com/llblab/pi-telegram
