@@ -302,6 +302,10 @@ git branch -D tmp-humanlayer-show-me-split
 
 After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
 
+Local overlay: this skill is manual-only in both Claude Code and Codex. Preserve
+`disable-model-invocation: true` in `SKILL.md` and
+`policy.allow_implicit_invocation: false` in `agents/openai.yaml` after updates.
+
 ## `pi-extensions/pi-telegram`
 
 - Source: https://github.com/llblab/pi-telegram
