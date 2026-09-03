@@ -1,7 +1,7 @@
 
 ## Skills
 
-The repository contains 20 tracked skills: 17 broadly useful skills under `skills/`
+The repository contains 21 tracked skills: 18 broadly useful skills under `skills/`
 and 3 opt-in fiction skills under `skill-packs/fiction/`.
 
 Codex can invoke a skill implicitly when the task matches its `description`. A
