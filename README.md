@@ -1,7 +1,7 @@
 
 ## Skills
 
-The repository contains 21 tracked skills: 18 broadly useful skills under `skills/`
+The repository contains 22 tracked skills: 19 broadly useful skills under `skills/`
 and 3 opt-in fiction skills under `skill-packs/fiction/`.
 
 Codex can invoke a skill implicitly when the task matches its `description`. A
@@ -39,6 +39,7 @@ intentionally separated and documented as a local fork. See
 | [`frontend-design-mitsuhiko`](skills/frontend-design-mitsuhiko) | **Manual-only** | [mitsuhiko/agent-stuff @ `b861028`](https://github.com/mitsuhiko/agent-stuff/tree/b861028c706edf3e3f983cde09dd8cc8549ec948/skills/frontend-design), locally renamed |
 | [`git-create-commit`](skills/git-create-commit) | Implicit | Local |
 | [`git-propose-commit`](skills/git-propose-commit) | Implicit | Local |
+| [`git-reshape-history`](skills/git-reshape-history) | **Manual-only** | Local |
 | [`git-subtree`](skills/git-subtree) | Implicit | Local |
 | [`grill-me`](skills/grill-me) | **Manual-only** | Maintained local fork of [mattpocock/skills @ `60aa99c`](https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md); diverged locally at `fb2dd08` and must not be updated from upstream |
 | [`grill-with-docs`](skills/grill-with-docs) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/grill-with-docs); split `70b6090` |
