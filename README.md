@@ -1,7 +1,7 @@
 
 ## Skills
 
-The repository contains 22 tracked skills: 19 broadly useful skills under `skills/`
+The repository contains 21 tracked skills: 18 broadly useful skills under `skills/`
 and 3 opt-in fiction skills under `skill-packs/fiction/`.
 
 Codex can invoke a skill implicitly when the task matches its `description`. A
@@ -31,25 +31,26 @@ intentionally separated and documented as a local fork. See
 
 | Skill | Codex invocation | Origin |
 | --- | --- | --- |
-| [`anthropic-frontend-design`](skills/anthropic-frontend-design) | **Manual-only** | [anthropics/skills @ `0a64e39`](https://github.com/anthropics/skills/tree/0a64e398ec6bb34a494f0c347e8ccae53a862f8e/skills/frontend-design); split `8279059`; locally renamed |
-| [`codebase-design`](skills/codebase-design) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/codebase-design); split `afd7936` |
+| [`anthropic-frontend-design`](skills/anthropic-frontend-design) | **Manual-only** | [anthropics/skills @ `3337550`](https://github.com/anthropics/skills/tree/33375500bcea98d610eb30ce10ac4e59b89c390d/skills/frontend-design); split `2aa4de6`; locally renamed |
+| [`codebase-design`](skills/codebase-design) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/codebase-design); split `afd7936` |
 | [`create-design-doc`](skills/create-design-doc) | **Manual-only** | Local |
-| [`domain-modeling`](skills/domain-modeling) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/domain-modeling); split `e7bce7a` |
+| [`domain-modeling`](skills/domain-modeling) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling); split `e7bce7a` |
 | [`fix-with-subagents`](skills/fix-with-subagents) | **Manual-only** | Local |
-| [`frontend-design-mitsuhiko`](skills/frontend-design-mitsuhiko) | **Manual-only** | [mitsuhiko/agent-stuff @ `b861028`](https://github.com/mitsuhiko/agent-stuff/tree/b861028c706edf3e3f983cde09dd8cc8549ec948/skills/frontend-design), locally renamed |
 | [`git-create-commit`](skills/git-create-commit) | Implicit | Local |
 | [`git-propose-commit`](skills/git-propose-commit) | Implicit | Local |
 | [`git-reshape-history`](skills/git-reshape-history) | **Manual-only** | Local |
 | [`git-subtree`](skills/git-subtree) | Implicit | Local |
 | [`grill-me`](skills/grill-me) | **Manual-only** | Maintained local fork of [mattpocock/skills @ `60aa99c`](https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md); diverged locally at `fb2dd08` and must not be updated from upstream |
 | [`grill-with-docs`](skills/grill-with-docs) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/grill-with-docs); split `70b6090` |
-| [`grilling`](skills/grilling) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/productivity/grilling); split `132f55a`; local manual-only policy |
-| [`improve-codebase-architecture`](skills/improve-codebase-architecture) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/improve-codebase-architecture); split `2d8ac8c` |
+| [`grilling`](skills/grilling) | **Manual-only** | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/grilling); split `69b3e82`; local manual-only policy |
+| [`improve-codebase-architecture`](skills/improve-codebase-architecture) | **Manual-only** | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/improve-codebase-architecture); split `2d8ac8c` |
 | [`prototype`](skills/prototype) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/prototype); split `56dafec` |
-| [`show-me`](skills/show-me) | **Manual-only** | [humanlayer/skills @ `3c26291`](https://github.com/humanlayer/skills/tree/3c2629142c5d437428269b1b722b08c0b87f574d/plugins/show-me/skills/show-me); split `022e375`; local manual-only policy |
+| [`show-me`](skills/show-me) | **Manual-only** | [humanlayer/skills @ `ca7c808`](https://github.com/humanlayer/skills/tree/ca7c8088db69e315a8b2deea43820270457f8f3c/plugins/show-me/skills/show-me); split `e6bc310`; local manual-only policy |
 | [`tdd`](skills/tdd) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/tdd); split `54cfb36` |
 | [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review) | **Manual-only** | [cursor/plugins @ `3347cba`](https://github.com/cursor/plugins/tree/3347cbab5b54136f6fba0994c3a01a56f7fb7fca/cursor-team-kit/skills/thermo-nuclear-code-quality-review), substantially rewritten locally |
 | [`yt-transcribe`](skills/yt-transcribe) | Implicit | Local |
+
+Vendored code subtree metadata and update notes live in [`SUBTREE.md`](SUBTREE.md).
 
 The `skills` directory contains broadly useful skills and is suitable for linking as
 `.agents/skills` so every agent can discover it.
@@ -80,25 +81,6 @@ Some skills should only run when explicitly requested, usually because they are 
 - Codex: add `policy.allow_implicit_invocation: false` to `agents/openai.yaml`.
 
 Keep both settings together for shared skills so manual invocation works in both tools.
-
-## Pi Extensions
-
-This repository contains independently installable Pi extensions.
-
-From the repository root, install the extensions locally:
-
-```bash
-pi install ./pi-extensions/pi-telegram
-pi install ./pi-extensions/pi-inline-skills
-pi install ./pi-extensions/preset
-```
-
-Vendored code subtree metadata and update notes live in [`SUBTREE.md`](SUBTREE.md).
-
-- [`pi-telegram`](pi-extensions/pi-telegram) - Telegram bridge for Pi, from [llblab/pi-telegram](https://github.com/llblab/pi-telegram) at [`c1b253a`](https://github.com/llblab/pi-telegram/commit/c1b253aeb05604e3adc70bf8642011fea1113c2c)
-- [`preset`](pi-extensions/preset) - Preset extension for Pi, vendored from [richardgill/pi-extensions/extensions/preset](https://github.com/richardgill/pi-extensions/tree/7e09e5371d8a7fa8d90adc91273503b68bcf6c61/extensions/preset) at [`7e09e53`](https://github.com/richardgill/pi-extensions/commit/7e09e5371d8a7fa8d90adc91273503b68bcf6c61)
-- [`pi-inline-skills`](pi-extensions/pi-inline-skills) - Inline `$skill` autocomplete for Pi, vendored from [tifandotme/pi-extensions/packages/pi-inline-skills](https://github.com/tifandotme/pi-extensions/tree/b58f061992941a10b7f4a731915b512401b422bf/packages/pi-inline-skills) at [`b58f061`](https://github.com/tifandotme/pi-extensions/commit/b58f061992941a10b7f4a731915b512401b422bf)
-
 
 ## Inspiration
 

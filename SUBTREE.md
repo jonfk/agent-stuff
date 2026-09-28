@@ -14,7 +14,7 @@ directly from [`mattpocock/skills`](https://github.com/mattpocock/skills):
 
 - Upstream: https://github.com/mattpocock/skills.git
 - Ref: `main`
-- Pinned upstream commit: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
+- Pinned upstream commit: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`
 - Update policy: **atomic**
 
 Each member remains a separate subtree because it comes from a different upstream
@@ -31,11 +31,11 @@ document it as a local fork and remove it from this cohort first.
 ## `skills/anthropic-frontend-design`
 
 - Source: https://github.com/anthropics/skills/tree/main/skills/frontend-design
-- Imported from: `0a64e398ec6bb34a494f0c347e8ccae53a862f8e`
-- Permalink: https://github.com/anthropics/skills/tree/0a64e398ec6bb34a494f0c347e8ccae53a862f8e/skills/frontend-design
+- Imported from: `33375500bcea98d610eb30ce10ac4e59b89c390d`
+- Permalink: https://github.com/anthropics/skills/tree/33375500bcea98d610eb30ce10ac4e59b89c390d/skills/frontend-design
 - Ref: `main`
 - Upstream subdirectory: `skills/frontend-design`
-- Split commit: `8279059424032d99a429ff7a9cef0b368deeb970`
+- Split commit: `2aa4de6b0460a55797f4ad07c26ecff6c0a54996`
 - Mode: `--squash`
 - Local path: `skills/anthropic-frontend-design`
 
@@ -61,11 +61,11 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/grilling`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling
-- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
-- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/productivity/grilling
+- Imported from: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`
+- Permalink: https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/grilling
 - Ref: `main`
 - Upstream subdirectory: `skills/productivity/grilling`
-- Split commit: `132f55a83e75f038aca6c871b1602428870831a0`
+- Split commit: `69b3e82ccfbf85f552b80ef665989efdee27c31a`
 - Mode: `--squash`
 - Local path: `skills/grilling`
 
@@ -89,8 +89,8 @@ Local overlay: this skill is manual-only in both Claude Code and Codex. Preserve
 ## `skills/domain-modeling`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling
-- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
-- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/domain-modeling
+- Imported from: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`
+- Permalink: https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/domain-modeling`
 - Split commit: `e7bce7aa4058f69dd903202390764117d6f343c7`
@@ -113,8 +113,8 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/codebase-design`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/codebase-design
-- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
-- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/codebase-design
+- Imported from: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`
+- Permalink: https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/codebase-design
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/codebase-design`
 - Split commit: `afd7936f40d5b9f7667ebe6f38e85fbc8bc41d6e`
@@ -161,8 +161,8 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/improve-codebase-architecture`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture
-- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
-- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/improve-codebase-architecture
+- Imported from: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`
+- Permalink: https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/improve-codebase-architecture
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/improve-codebase-architecture`
 - Split commit: `2d8ac8c6a475d0ff81895743dc102b9a531464e5`
@@ -230,30 +230,6 @@ git branch -D tmp-mattpocock-skills-prototype tmp-mattpocock-prototype-split
 
 After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
 
-## `skills/teach`
-
-- Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/teach
-- Imported from: `694fa30311e02c2639942308513555e61ee84a6f`
-- Permalink: https://github.com/mattpocock/skills/tree/694fa30311e02c2639942308513555e61ee84a6f/skills/productivity/teach
-- Ref: `main`
-- Upstream subdirectory: `skills/productivity/teach`
-- Split commit: `9e5df69a8fde2b866a28e61dbc8782e780e0a131`
-- Mode: `--squash`
-- Local path: `skills/teach`
-
-This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
-
-```bash
-git fetch https://github.com/mattpocock/skills.git main
-git switch -c tmp-mattpocock-skills-teach FETCH_HEAD
-git subtree split -P skills/productivity/teach -b tmp-mattpocock-teach-split
-git switch main
-git subtree pull --prefix=skills/teach tmp-mattpocock-teach-split --squash
-git branch -D tmp-mattpocock-skills-teach tmp-mattpocock-teach-split
-```
-
-After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
-
 ## `skills/thermo-nuclear-code-quality-review`
 
 - Source: https://github.com/cursor/plugins/tree/main/cursor-team-kit/skills/thermo-nuclear-code-quality-review
@@ -281,11 +257,11 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/show-me`
 
 - Source: https://github.com/humanlayer/skills/tree/main/plugins/show-me/skills/show-me
-- Imported from: `3c2629142c5d437428269b1b722b08c0b87f574d`
-- Permalink: https://github.com/humanlayer/skills/tree/3c2629142c5d437428269b1b722b08c0b87f574d/plugins/show-me/skills/show-me
+- Imported from: `ca7c8088db69e315a8b2deea43820270457f8f3c`
+- Permalink: https://github.com/humanlayer/skills/tree/ca7c8088db69e315a8b2deea43820270457f8f3c/plugins/show-me/skills/show-me
 - Ref: `main`
 - Upstream subdirectory: `plugins/show-me/skills/show-me`
-- Split commit: `022e37536acbe67d6850a30678a3da7c74825fe7`
+- Split commit: `e6bc3106e4b3fd98c352bae5537b638e814fa9bf`
 - Mode: `--squash`
 - Local path: `skills/show-me`
 
@@ -305,64 +281,6 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 Local overlay: this skill is manual-only in both Claude Code and Codex. Preserve
 `disable-model-invocation: true` in `SKILL.md` and
 `policy.allow_implicit_invocation: false` in `agents/openai.yaml` after updates.
-
-## `pi-extensions/pi-telegram`
-
-- Source: https://github.com/llblab/pi-telegram
-- Imported from: `c1b253aeb05604e3adc70bf8642011fea1113c2c`
-- Permalink: https://github.com/llblab/pi-telegram/tree/c1b253aeb05604e3adc70bf8642011fea1113c2c
-
-Update with a normal subtree pull:
-
-```bash
-git subtree pull --prefix=pi-extensions/pi-telegram https://github.com/llblab/pi-telegram main --squash
-```
-
-After updating vendored code, refresh the commit and permalink here and in `README.md`.
-
-## `pi-extensions/preset`
-
-- Source: https://github.com/richardgill/pi-extensions/tree/main/extensions/preset
-- Imported from: `7e09e5371d8a7fa8d90adc91273503b68bcf6c61`
-- Permalink: https://github.com/richardgill/pi-extensions/tree/7e09e5371d8a7fa8d90adc91273503b68bcf6c61/extensions/preset
-- Ref: `main`
-- Mode: `--squash`
-- Local path: `pi-extensions/preset`
-
-This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
-
-```bash
-git fetch https://github.com/richardgill/pi-extensions.git main
-git switch -c tmp-richardgill-pi-extensions FETCH_HEAD
-git subtree split -P extensions/preset -b tmp-richardgill-preset-split
-git switch main
-git subtree pull --prefix=pi-extensions/preset tmp-richardgill-preset-split --squash
-git branch -D tmp-richardgill-pi-extensions tmp-richardgill-preset-split
-```
-
-After updating vendored code, refresh the commit and permalink here and in `README.md`.
-
-## `pi-extensions/pi-inline-skills`
-
-- Source: https://github.com/tifandotme/pi-extensions/tree/master/packages/pi-inline-skills
-- Imported from: `b58f061992941a10b7f4a731915b512401b422bf`
-- Permalink: https://github.com/tifandotme/pi-extensions/tree/b58f061992941a10b7f4a731915b512401b422bf/packages/pi-inline-skills
-- Ref: `master`
-- Mode: `--squash`
-- Local path: `pi-extensions/pi-inline-skills`
-
-This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
-
-```bash
-git fetch https://github.com/tifandotme/pi-extensions.git master
-git switch -c tmp-tifandotme-pi-extensions FETCH_HEAD
-git subtree split -P packages/pi-inline-skills -b tmp-tifandotme-pi-inline-skills-split
-git switch main
-git subtree pull --prefix=pi-extensions/pi-inline-skills tmp-tifandotme-pi-inline-skills-split --squash
-git branch -D tmp-tifandotme-pi-extensions tmp-tifandotme-pi-inline-skills-split
-```
-
-After updating vendored code, refresh the commit and permalink here and in `README.md`.
 
 ## Locally maintained copies
 
