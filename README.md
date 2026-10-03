@@ -1,7 +1,7 @@
 
 ## Skills
 
-The repository contains 21 tracked skills: 18 broadly useful skills under `skills/`
+The repository contains 22 tracked skills: 19 broadly useful skills under `skills/`
 and 3 opt-in fiction skills under `skill-packs/fiction/`.
 
 Codex can invoke a skill implicitly when the task matches its `description`. A
@@ -43,6 +43,7 @@ intentionally separated and documented as a local fork. See
 | [`grill-me`](skills/grill-me) | **Manual-only** | Maintained local fork of [mattpocock/skills @ `60aa99c`](https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md); diverged locally at `fb2dd08` and must not be updated from upstream |
 | [`grill-with-docs`](skills/grill-with-docs) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/grill-with-docs); split `70b6090` |
 | [`grilling`](skills/grilling) | **Manual-only** | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/grilling); split `69b3e82`; local manual-only policy |
+| [`handoff`](skills/handoff) | **Manual-only** | [mattpocock/skills @ `d81f3a1`](https://github.com/mattpocock/skills/tree/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/handoff); split `dec8c57` |
 | [`improve-codebase-architecture`](skills/improve-codebase-architecture) | **Manual-only** | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/improve-codebase-architecture); split `2d8ac8c` |
 | [`prototype`](skills/prototype) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/prototype); split `56dafec` |
 | [`show-me`](skills/show-me) | **Manual-only** | [humanlayer/skills @ `ca7c808`](https://github.com/humanlayer/skills/tree/ca7c8088db69e315a8b2deea43820270457f8f3c/plugins/show-me/skills/show-me); split `e6bc310`; local manual-only policy |
@@ -54,6 +55,14 @@ Vendored code subtree metadata and update notes live in [`SUBTREE.md`](SUBTREE.m
 
 The `skills` directory contains broadly useful skills and is suitable for linking as
 `.agents/skills` so every agent can discover it.
+
+`handoff` is a standalone Matt Pocock skill that writes a conversation summary to
+the OS temporary directory, references existing artifacts, and suggests skills
+for the next agent. It has no required skill dependencies and can be updated
+independently of the architecture suite. Upstream also includes it in the
+`mattpocock-skills` Claude Code plugin; its router and documentation recommend it
+for moving between prototype, teaching, and planning sessions. See
+[`SUBTREE.md`](SUBTREE.md#skillshandoff) for the dependency and packaging review.
 
 ### Opt-in skill packs
 

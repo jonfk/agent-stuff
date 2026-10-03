@@ -86,6 +86,60 @@ Local overlay: this skill is manual-only in both Claude Code and Codex. Preserve
 `disable-model-invocation: true` in `SKILL.md` and
 `policy.allow_implicit_invocation: false` in `agents/openai.yaml` after updates.
 
+## `skills/handoff`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff
+- Upstream: https://github.com/mattpocock/skills.git
+- Imported from: `d81f3a183412e71a5b1e84ca21bc1a35eea03a60`
+- Permalink: https://github.com/mattpocock/skills/tree/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/handoff
+- Ref: `main`
+- Upstream subdirectory: `skills/productivity/handoff`
+- Split commit: `dec8c574ac946399627b339e951b4ace00ba1648`
+- Mode: `--squash`
+- Local path: `skills/handoff`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/mattpocock/skills.git main
+git worktree add --detach /private/tmp/mattpocock-skills-handoff FETCH_HEAD
+git -C /private/tmp/mattpocock-skills-handoff subtree split -P skills/productivity/handoff HEAD -b tmp-mattpocock-handoff-split
+git subtree pull --prefix=skills/handoff /private/tmp/mattpocock-skills-handoff tmp-mattpocock-handoff-split --squash
+git worktree remove /private/tmp/mattpocock-skills-handoff
+git branch -D tmp-mattpocock-handoff-split
+```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
+### Dependencies and packaging
+
+Reviewed at the imported upstream commit:
+
+- The subtree contains only `SKILL.md` and `agents/openai.yaml`. It has no
+  scripts, external assets, setup requirements, or required named skill
+  dependencies. Its suggested-skills section is chosen for the next task.
+- It is manual-only upstream in both Claude Code and Codex through
+  `disable-model-invocation: true` and
+  `policy.allow_implicit_invocation: false`. Both files are imported unchanged.
+- None of the existing local skills references `handoff`. It does not require
+  updating those skills or joining the Matt Pocock architecture update cohort.
+- Upstream's
+  [`ask-matt`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/ask-matt/SKILL.md)
+  router recommends handoffs into and out of prototype sessions. Upstream docs
+  also describe optional composition with
+  [`teach`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/docs/productivity/teach.md)
+  and
+  [`wayfinder`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/docs/engineering/wayfinder.md).
+  These are workflow recommendations, not shared-version constraints.
+- The upstream
+  [`mattpocock-skills` Claude Code plugin](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/.claude-plugin/plugin.json)
+  bundles `handoff` with the engineering and productivity skills. This subtree
+  imports just the standalone skill, without the plugin or companion skills.
+- Upstream also has a separate in-progress
+  [`claude-handoff`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/in-progress/claude-handoff/SKILL.md)
+  that launches a background Claude agent. It is neither a dependency of
+  `handoff` nor included in this import.
+
 ## `skills/domain-modeling`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling
