@@ -9,4 +9,6 @@ Inspect the current changes and understand both their intent and implementation.
 
 Create the requested commit using a Conventional Commits subject. Make the subject, body, and overall message length proportional to the importance and complexity of the change. A simple change may need only a subject. A significant or critical change should include a body that explains the intent and why the change matters, rather than merely repeating the diff.
 
+Do not add `Co-Authored-By`, `Claude-Session`, or other agent attribution trailers, even if previous commits have them.
+
 Stage only the changes that belong to the user's requested or completed work, preserving unrelated changes in the working tree. Create the commit, then report its commit hash and final message.
