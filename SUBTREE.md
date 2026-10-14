@@ -50,11 +50,10 @@ git subtree pull --prefix=skills/anthropic-frontend-design . tmp-anthropics-fron
 git branch -D tmp-anthropics-skills-frontend-design tmp-anthropics-frontend-design-split
 ```
 
-Local overlays: the local skill and directory are renamed to
-`anthropic-frontend-design`, and the skill is manual-only in both Claude Code
-and Codex. After updates, preserve the `name` and
-`disable-model-invocation: true` fields in `SKILL.md` and
-`policy.allow_implicit_invocation: false` in `agents/openai.yaml`.
+Local overlay: the local skill and directory are renamed to
+`anthropic-frontend-design`. After updates, preserve the `name` field in
+`SKILL.md`. The skill keeps upstream's default invocation, so models can invoke
+it implicitly in both Claude Code and Codex.
 
 After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
 

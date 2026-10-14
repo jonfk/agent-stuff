@@ -31,7 +31,7 @@ intentionally separated and documented as a local fork. See
 
 | Skill | Codex invocation | Origin |
 | --- | --- | --- |
-| [`anthropic-frontend-design`](skills/anthropic-frontend-design) | **Manual-only** | [anthropics/skills @ `3337550`](https://github.com/anthropics/skills/tree/33375500bcea98d610eb30ce10ac4e59b89c390d/skills/frontend-design); split `2aa4de6`; locally renamed |
+| [`anthropic-frontend-design`](skills/anthropic-frontend-design) | Implicit | [anthropics/skills @ `3337550`](https://github.com/anthropics/skills/tree/33375500bcea98d610eb30ce10ac4e59b89c390d/skills/frontend-design); split `2aa4de6`; locally renamed |
 | [`codebase-design`](skills/codebase-design) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/codebase-design); split `afd7936` |
 | [`create-design-doc`](skills/create-design-doc) | **Manual-only** | Local |
 | [`domain-modeling`](skills/domain-modeling) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling); split `e7bce7a` |
