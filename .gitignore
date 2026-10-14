@@ -1,2 +1,5 @@
 
 node_modules
+
+# Managed by the Claude desktop app (synced claude.ai skills), written here via the ~/.claude/skills symlink
+skills/synced/
