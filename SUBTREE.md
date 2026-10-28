@@ -28,6 +28,44 @@ such as invocation policy may remain in the cohort and must be preserved after
 updates. If a member needs behavioral changes or a different upstream pin,
 document it as a local fork and remove it from this cohort first.
 
+### Matt Pocock retro pair
+
+`retro` loads `writing-for-agents` on every run, so the two skills are vendored
+together from [`mattpocock/skills`](https://github.com/mattpocock/skills):
+
+- `skills/retro`
+- `skills/writing-for-agents`
+
+- Upstream: https://github.com/mattpocock/skills.git
+- Ref: `main`
+- Pinned upstream commit: `59db609eb1e18aaf59b63284d0e52255aff0c63c`
+- Update policy: **atomic**
+
+`retro`'s first step invokes the `writing-for-agents` skill, and it uses that
+skill's definitions to judge no-op instructions and skills before it writes
+anything. Upstream declines to make that load lazy (see
+[`.out-of-scope/lazy-load-writing-for-agents.md`](https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/.out-of-scope/lazy-load-writing-for-agents.md)).
+Split both members from the same fetched commit, review both subtree updates
+together, and commit them as one change. Refresh the pinned commit above and
+both members' subtree metadata in this file and `README.md`.
+
+Do not advance one member independently, and do not remove `writing-for-agents`
+while `retro` remains vendored. This pair is independent of the architecture
+suite and may use a different upstream pin.
+
+To update the pair:
+
+```bash
+git fetch https://github.com/mattpocock/skills.git main
+git worktree add --detach /private/tmp/mattpocock-skills-retro FETCH_HEAD
+git -C /private/tmp/mattpocock-skills-retro subtree split -P skills/engineering/retro HEAD -b tmp-mattpocock-retro-split
+git -C /private/tmp/mattpocock-skills-retro subtree split -P skills/productivity/writing-for-agents HEAD -b tmp-mattpocock-writing-for-agents-split
+git subtree pull --prefix=skills/retro /private/tmp/mattpocock-skills-retro tmp-mattpocock-retro-split --squash
+git subtree pull --prefix=skills/writing-for-agents /private/tmp/mattpocock-skills-retro tmp-mattpocock-writing-for-agents-split --squash
+git worktree remove /private/tmp/mattpocock-skills-retro
+git branch -D tmp-mattpocock-retro-split tmp-mattpocock-writing-for-agents-split
+```
+
 ## `skills/anthropic-frontend-design`
 
 - Source: https://github.com/anthropics/skills/tree/main/skills/frontend-design
@@ -138,6 +176,77 @@ Reviewed at the imported upstream commit:
   [`claude-handoff`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/in-progress/claude-handoff/SKILL.md)
   that launches a background Claude agent. It is neither a dependency of
   `handoff` nor included in this import.
+
+## `skills/retro`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/retro
+- Upstream: https://github.com/mattpocock/skills.git
+- Imported from: `59db609eb1e18aaf59b63284d0e52255aff0c63c`
+- Permalink: https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/retro
+- Ref: `main`
+- Upstream subdirectory: `skills/engineering/retro`
+- Split commit: `796ead9f6f368553789d220f10de54b6428d5e95`
+- Mode: `--squash`
+- Local path: `skills/retro`
+
+This is a subtree of an upstream subdirectory and a member of the
+[Matt Pocock retro pair](#matt-pocock-retro-pair). Update it only with that
+cohort's procedure, together with `skills/writing-for-agents`.
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
+### Dependencies and packaging
+
+Reviewed at the imported upstream commit:
+
+- The subtree contains only `SKILL.md` and `agents/openai.yaml`. It has no
+  scripts, external assets, or setup requirements. Both files are imported
+  unchanged.
+- It is manual-only upstream in both Claude Code and Codex through
+  `disable-model-invocation: true` and
+  `policy.allow_implicit_invocation: false`.
+- It requires `writing-for-agents`, which is vendored alongside it as
+  `skills/writing-for-agents`.
+- It assumes a review stage that reads a `CODING_STANDARDS.md`. No skill ships
+  that file; `retro` proposes creating it the first time it finds a
+  judgement-call rule. Upstream's
+  [`code-review`](https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/code-review)
+  skill is the reviewer it most often tunes. That skill is not vendored here
+  and differs from Claude Code's built-in `/code-review`. This is a workflow
+  recommendation, not a shared-version constraint.
+- The upstream
+  [`mattpocock-skills` Claude Code plugin](https://github.com/mattpocock/skills/blob/59db609eb1e18aaf59b63284d0e52255aff0c63c/.claude-plugin/plugin.json)
+  bundles `retro` with the engineering and productivity skills. This subtree
+  imports just the standalone skill.
+
+## `skills/writing-for-agents`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/writing-for-agents
+- Upstream: https://github.com/mattpocock/skills.git
+- Imported from: `59db609eb1e18aaf59b63284d0e52255aff0c63c`
+- Permalink: https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/productivity/writing-for-agents
+- Ref: `main`
+- Upstream subdirectory: `skills/productivity/writing-for-agents`
+- Split commit: `3bbd7f45e1f82a3846162d7c9134f00a55bc799f`
+- Mode: `--squash`
+- Local path: `skills/writing-for-agents`
+
+This is a subtree of an upstream subdirectory and a member of the
+[Matt Pocock retro pair](#matt-pocock-retro-pair). Update it only with that
+cohort's procedure, together with `skills/retro`.
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
+### Dependencies and packaging
+
+Reviewed at the imported upstream commit:
+
+- The subtree contains `SKILL.md`, `SKILL-MECHANICS.md`, and
+  `agents/openai.yaml`. It has no scripts, external assets, setup
+  requirements, or named skill dependencies. All files are imported unchanged.
+- It keeps upstream's default invocation, so models can invoke it implicitly
+  in both Claude Code and Codex when creating or editing skills, `AGENTS.md`,
+  or `CLAUDE.md`.
 
 ## `skills/domain-modeling`
 

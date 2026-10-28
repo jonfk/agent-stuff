@@ -1,7 +1,7 @@
 
 ## Skills
 
-The repository contains 22 tracked skills: 19 broadly useful skills under `skills/`
+The repository contains 24 tracked skills: 21 broadly useful skills under `skills/`
 and 3 opt-in fiction skills under `skill-packs/fiction/`.
 
 Codex can invoke a skill implicitly when the task matches its `description`. A
@@ -27,6 +27,22 @@ same upstream commit. Do not advance one member independently unless it is being
 intentionally separated and documented as a local fork. See
 [`SUBTREE.md`](SUBTREE.md) for the pinned upstream snapshot and update procedure.
 
+### Matt Pocock retro pair
+
+`retro` and `writing-for-agents` are imported together from
+[`mattpocock/skills`](https://github.com/mattpocock/skills):
+
+- `retro` reviews a coding session and proposes improvements to the agent's
+  environment: navigation pointers, automated checks, coding standards,
+  steering files, and tooling.
+- `writing-for-agents` is the style and structure reference for skills,
+  `AGENTS.md`, `CLAUDE.md`, and other documents agents consume.
+
+`retro` loads `writing-for-agents` on every run, so treat the pair as an
+**atomic update cohort** pinned to one upstream commit. It is independent of the
+architecture suite. See [`SUBTREE.md`](SUBTREE.md#matt-pocock-retro-pair) for the
+update procedure and dependency review.
+
 ### Shared skill inventory
 
 | Skill | Codex invocation | Origin |
@@ -46,9 +62,11 @@ intentionally separated and documented as a local fork. See
 | [`handoff`](skills/handoff) | **Manual-only** | [mattpocock/skills @ `d81f3a1`](https://github.com/mattpocock/skills/tree/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/handoff); split `dec8c57` |
 | [`improve-codebase-architecture`](skills/improve-codebase-architecture) | **Manual-only** | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/improve-codebase-architecture); split `2d8ac8c` |
 | [`prototype`](skills/prototype) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/prototype); split `56dafec` |
+| [`retro`](skills/retro) | **Manual-only** | [mattpocock/skills @ `59db609`](https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/retro); split `796ead9`; requires `writing-for-agents` |
 | [`show-me`](skills/show-me) | **Manual-only** | [humanlayer/skills @ `ca7c808`](https://github.com/humanlayer/skills/tree/ca7c8088db69e315a8b2deea43820270457f8f3c/plugins/show-me/skills/show-me); split `e6bc310`; local manual-only policy |
 | [`tdd`](skills/tdd) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/tdd); split `54cfb36` |
 | [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review) | **Manual-only** | [cursor/plugins @ `3347cba`](https://github.com/cursor/plugins/tree/3347cbab5b54136f6fba0994c3a01a56f7fb7fca/cursor-team-kit/skills/thermo-nuclear-code-quality-review), substantially rewritten locally |
+| [`writing-for-agents`](skills/writing-for-agents) | Implicit | [mattpocock/skills @ `59db609`](https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/productivity/writing-for-agents); split `3bbd7f4` |
 | [`yt-transcribe`](skills/yt-transcribe) | Implicit | Local |
 
 Vendored code subtree metadata and update notes live in [`SUBTREE.md`](SUBTREE.md).
