@@ -1,0 +1,7 @@
+interface:
+  display_name: "Council"
+  short_description: "Multi-model review council"
+  default_prompt: "Use $council to get a scored review of the current changes."
+
+policy:
+  allow_implicit_invocation: false
