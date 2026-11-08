@@ -119,9 +119,8 @@ git branch -D tmp-mattpocock-skills-grilling tmp-mattpocock-grilling-split
 
 After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
 
-Local overlay: this skill is manual-only in both Claude Code and Codex. Preserve
-`disable-model-invocation: true` in `SKILL.md` and
-`policy.allow_implicit_invocation: false` in `agents/openai.yaml` after updates.
+The skill keeps upstream's default invocation, so models can invoke it
+implicitly in both Claude Code and Codex. All files are imported unchanged.
 
 ## `skills/handoff`
 
