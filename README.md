@@ -1,7 +1,7 @@
 
 ## Skills
 
-The repository contains 24 tracked skills: 21 broadly useful skills under `skills/`
+The repository contains 25 tracked skills: 22 broadly useful skills under `skills/`
 and 3 opt-in fiction skills under `skill-packs/fiction/`.
 
 Codex can invoke a skill implicitly when the task matches its `description`. A
@@ -49,6 +49,7 @@ update procedure and dependency review.
 | --- | --- | --- |
 | [`anthropic-frontend-design`](skills/anthropic-frontend-design) | Implicit | [anthropics/skills @ `3337550`](https://github.com/anthropics/skills/tree/33375500bcea98d610eb30ce10ac4e59b89c390d/skills/frontend-design); split `2aa4de6`; locally renamed |
 | [`codebase-design`](skills/codebase-design) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/codebase-design); split `afd7936` |
+| [`council`](skills/council) | **Manual-only** | Local, Claude Code only; inspired by [t3dotgg/tstack @ `1085050`](https://github.com/t3dotgg/tstack/blob/1085050f3baed1ac724caa4a8166145fb2ac88af/skills/council/SKILL.md) |
 | [`create-design-doc`](skills/create-design-doc) | **Manual-only** | Local |
 | [`domain-modeling`](skills/domain-modeling) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling); split `e7bce7a` |
 | [`fix-with-subagents`](skills/fix-with-subagents) | **Manual-only** | Local |
