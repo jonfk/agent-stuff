@@ -33,9 +33,18 @@ def log(message: str) -> None:
     print(f"{PROG}: {message}", file=sys.stderr)
 
 
-def require_binary(name: str) -> None:
-    if shutil.which(name) is None:
-        raise UserFacingError(f"{name} not found in PATH")
+def resolve_yt_dlp() -> list[str]:
+    # Prefer an installed yt-dlp (it may ship with a JS runtime and ffmpeg);
+    # otherwise run the latest release from PyPI through uvx.
+    if shutil.which("yt-dlp"):
+        return ["yt-dlp"]
+    if shutil.which("uvx"):
+        log("yt-dlp not found in PATH; falling back to uvx")
+        return ["uvx", "--from", "yt-dlp[default]", "yt-dlp"]
+    raise UserFacingError(
+        "yt-dlp not found in PATH and uvx is unavailable; install yt-dlp "
+        "(https://github.com/yt-dlp/yt-dlp#installation) or uv (https://docs.astral.sh/uv/)"
+    )
 
 
 def run_command(
@@ -116,9 +125,9 @@ def parse_json_stdout(raw_stdout: str) -> Mapping[str, Any]:
     return value
 
 
-def fetch_video_info(url: str) -> Mapping[str, Any]:
+def fetch_video_info(yt_dlp: Sequence[str], url: str) -> Mapping[str, Any]:
     command = [
-        "yt-dlp",
+        *yt_dlp,
         "--no-playlist",
         "--skip-download",
         "--dump-single-json",
@@ -145,9 +154,16 @@ def normalize_caption_map(value: Any) -> dict[str, Any]:
     return normalized
 
 
+def orig_first(langs: Iterable[str]) -> list[str]:
+    # "<lang>-orig" auto captions are the source-language ASR track. The plain
+    # "<lang>" auto tracks are machine translations (timedtext ...&tlang=), which
+    # YouTube rate-limits much more aggressively (HTTP 429) on some IPs.
+    return sorted(langs, key=lambda lang: (not lang.lower().endswith("-orig"), lang.casefold()))
+
+
 def langs_starting_with(langs: Iterable[str], prefix: str) -> list[str]:
     needle = prefix.lower()
-    return sorted((lang for lang in langs if lang.lower().startswith(needle)), key=str.casefold)
+    return orig_first(lang for lang in langs if lang.lower().startswith(needle))
 
 
 def build_caption_attempts(info: Mapping[str, Any]) -> tuple[list[tuple[str, str]], list[str], list[str], list[str]]:
@@ -175,7 +191,7 @@ def build_caption_attempts(info: Mapping[str, Any]) -> tuple[list[tuple[str, str
     add_attempts("official", "fr official", langs_starting_with(official_langs, "fr"))
     add_attempts("auto", "fr auto", langs_starting_with(auto_langs, "fr"))
     add_attempts("official", "any official", official_langs)
-    add_attempts("auto", "any auto", auto_langs)
+    add_attempts("auto", "any auto", orig_first(auto_langs))
 
     return attempts, official_langs, auto_langs, step_logs
 
@@ -194,11 +210,13 @@ def pick_best_vtt(requested_langs: str, files: Sequence[Path]) -> Path:
     return files[0]
 
 
-def download_subtitles(kind: str, url: str, lang: str, directory: Path) -> tuple[int, Optional[Path]]:
+def download_subtitles(
+    yt_dlp: Sequence[str], kind: str, url: str, lang: str, directory: Path
+) -> tuple[int, Optional[Path]]:
     directory.mkdir(parents=True, exist_ok=True)
 
     args = [
-        "yt-dlp",
+        *yt_dlp,
         "--no-playlist",
         "--skip-download",
         "--sub-langs",
@@ -361,7 +379,7 @@ def build_parser() -> argparse.ArgumentParser:
             "  With -o/--output, writes Markdown to the given file path.\n"
             "  With --subtitle, also writes a .vtt file beside the Markdown output.\n\n"
             "Notes:\n"
-            "  - Requires yt-dlp in PATH.\n"
+            "  - Uses yt-dlp from PATH, or falls back to `uvx --from yt-dlp[default] yt-dlp`.\n"
             "  - Fixed priority order: en official -> en auto -> fr official -> fr auto -> any official -> any auto.\n"
             "  - --lang is accepted for compatibility but ignored.\n"
             "  - Prints the written .md path to stdout (logs go to stderr)."
@@ -404,14 +422,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     args = parser.parse_args(argv)
 
     try:
-        require_binary("yt-dlp")
+        yt_dlp = resolve_yt_dlp()
     except UserFacingError as exc:
-        log(str(exc))
+        log(f"error: {exc}")
         return 127
 
     install_signal_handlers()
 
-    info = fetch_video_info(args.url)
+    info = fetch_video_info(yt_dlp, args.url)
 
     video_id = str(info.get("id", "")).strip()
     title = str(info.get("title", "")).strip()
@@ -451,6 +469,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     chosen_lang: Optional[str] = None
     vtt_path: Optional[Path] = None
     attempted_labels: list[str] = []
+    failed_labels: list[str] = []
+    max_failures = 3
 
     with tempfile.TemporaryDirectory(prefix="yt-transcript-") as temp_root:
         temp_root_path = Path(temp_root)
@@ -459,7 +479,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             attempted_labels.append(attempt_label)
             log(f"attempt {index}/{len(attempts)}: trying {attempt_label}")
             target_dir = temp_root_path / f"{kind}-{index}"
-            rc, maybe_vtt_path = download_subtitles(kind, args.url, lang_tag, target_dir)
+            rc, maybe_vtt_path = download_subtitles(yt_dlp, kind, args.url, lang_tag, target_dir)
             if rc == 0 and maybe_vtt_path is not None:
                 chosen_kind = kind
                 chosen_lang = lang_tag
@@ -467,12 +487,20 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 log(f"selected subtitles: {attempt_label}")
                 break
             if rc == 2:
-                raise UserFacingError(f"yt-dlp failed while fetching subtitles for {attempt_label}")
+                failed_labels.append(attempt_label)
+                if len(failed_labels) >= max_failures:
+                    failed = ", ".join(failed_labels)
+                    raise UserFacingError(
+                        f"yt-dlp failed while fetching subtitles for [{failed}]; giving up after {max_failures} failures"
+                    )
+                log(f"attempt {index}/{len(attempts)} failed for {attempt_label}; trying next candidate")
+                continue
             log(f"attempt {index}/{len(attempts)} produced no subtitle file for {attempt_label}")
 
         if vtt_path is None or chosen_kind is None or chosen_lang is None:
             attempted = ", ".join(attempted_labels) if attempted_labels else "(none)"
-            raise UserFacingError(f"no subtitles found after trying [{attempted}] ({available})")
+            failed_note = f"; yt-dlp failed for [{', '.join(failed_labels)}]" if failed_labels else ""
+            raise UserFacingError(f"no subtitles found after trying [{attempted}] ({available}){failed_note}")
 
         if args.subtitle:
             shutil.copy2(vtt_path, vtt_out)
