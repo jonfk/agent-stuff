@@ -1,65 +1,55 @@
 ---
 name: council
-description: Get review or feedback from a council of Claude and GPT models. Pass "high" for the high council. Use only when the user explicitly invokes this skill.
-argument-hint: "[high] [request]"
+description: Get review or feedback from a council of Claude and GPT models. Pass "high" for the high council, "full send" to review and fix in rounds. Use only when the user explicitly invokes this skill.
+argument-hint: "[high] [full send] [request]"
 disable-model-invocation: true
 ---
 
 # Council
 
 Finish the work before convening: fix known issues, address outstanding PR
-comments, and run the relevant checks. Skip this for code the user plans to
-replace.
+comments, and run the relevant checks.
 
 ## Members
 
-Each cell is the member's reasoning effort; `-` means it does not sit on that
-council. Convene the high council only when the user asks for it. If the user
-names members, use those.
+Convene the high council only when the user asks for it. If the user names
+members, use those.
 
-| Member | Council | High council |
+| Member | Council effort | High council effort |
 | --- | --- | --- |
 | Opus 5.5 (`opus`) | high | high |
 | GPT-6.1 Sol (`gpt-6.1-sol`) | high | high |
 | GPT-6 Astra (`gpt-6-astra`) | medium | high |
-| Fable 5.1 (`fable`) | - | high |
+| Fable 5.1 (`fable`) | | high |
 
-Run Claude members as fresh subagents with the member's model and effort. Do
-not fork: a fork ignores the model override. Run GPT members with Codex in the
-background:
+Run Claude members as fresh subagents with the member's model and effort; a
+fork ignores the model override. Run GPT members with Codex in the background:
 
 ```bash
 codex exec -m <model> -c model_reasoning_effort=<effort> -s read-only \
   --ephemeral --ignore-user-config -o <output-file> - < <request-file>
 ```
 
-Start every member at once. If a member cannot run, report it instead of
-substituting another model.
+Start every member at once. If a member cannot run, report it.
 
 ## Review
 
-Give each member the request and the context it needs, and keep its work
-read-only. Summarize the useful findings, disagreements, and recommended next
-steps. For a code review, ask each member for a score out of 10; if one gives no
-score, write `no score` rather than inventing one.
+Give each member the request, the context it needs, and a read-only mandate.
+For a code review, ask each for a score out of 10; if one gives none, write
+`no score`.
 
-A full pass by every member is one round. If you agree with the findings, make
-the changes and convene a fresh council for the next round, until the members
-are satisfied or the remaining findings are ones you've declined.
+Members can be wrong, and they will push to widen the task with changes,
+improvements, and extra scope. Keeping scope tight is your job: push back on
+every finding outside the request, and decline any you disagree with, saying
+why.
 
-Members can be wrong. Decline findings you disagree with, say why, and give the
-reason to the next round so the finding isn't raised again just to be declined
-again. Reviewers will suggest improvements beyond the task, especially in later
-rounds. Decline those rather than expanding the work.
+Report the findings you agree with, marking those raised by more than one
+member, and each member's score.
 
-If the work ends in a pull request, add the scores to its description (edit it,
-don't comment); otherwise put them in the final reply:
+## Full send
 
-```markdown
-## Council review
-
-| Member | Round 1 | Round 2 |
-| --- | --- | --- |
-| Opus 5.5 | 7/10 | 9/10 |
-| GPT-6.1 Sol | 8/10 | 10/10 |
-```
+Only when the user passes `full send`: a pass by every member is one round.
+Make the changes you agree with, then convene a fresh council for the next
+round with your reasons for each declined finding. Stop when the members are
+satisfied or only declined findings remain. Report scores as a table, one row
+per member and one column per round.
