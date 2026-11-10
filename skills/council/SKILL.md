@@ -1,23 +1,20 @@
 ---
 name: council
-description: Get review or feedback from a council of Claude and GPT models. Pass "high" for the high council, "full send" to review and fix in rounds. Use only when the user explicitly invokes this skill.
-argument-hint: "[high] [full send] [request]"
-disable-model-invocation: true
+description: Council of Claude and GPT models for review or feedback. Use when the user asks for the council or a multi-model review. "full send" reviews and fixes in rounds.
+argument-hint: "[members] [effort] [full send] [request]"
 ---
 
 # Council
 
 ## Members
 
-Convene the high council only when the user asks for it. If the user names
-members, use those.
+- Opus 5.5 (`opus`)
+- GPT-6.1 Sol (`gpt-6.1-sol`)
+- GPT-6 Astra (`gpt-6-astra`)
+- Fable 5.2 (`fable`), only when the user requests it
 
-| Member | Council effort | High council effort |
-| --- | --- | --- |
-| Opus 5.5 (`opus`) | high | high |
-| GPT-6.1 Sol (`gpt-6.1-sol`) | high | high |
-| GPT-6 Astra (`gpt-6-astra`) | medium | high |
-| Fable 5.1 (`fable`) | | high |
+Run every member at medium effort unless the user requests another level. If
+the user names members, use those.
 
 Run Claude members as fresh subagents with the member's model and effort. Run
 GPT members with Codex in the background:
@@ -27,28 +24,45 @@ codex exec -m <model> -c model_reasoning_effort=<effort> -s read-only \
   --ephemeral --ignore-user-config -o <output-file> - < <request-file>
 ```
 
-Start every member at once. If a member cannot run, report it.
+Start every member at once. If a member cannot run, stop and report it.
 
 ## Review
 
 Give each member the request, the context it needs, and a read-only mandate.
-For a code review, ask each for a score out of 10; if one gives none, write
+Where applicable, ask each for a score out of 10; if one gives none, write
 `no score`.
 
 Members can be wrong, and they will push to widen the task with changes,
-improvements, and extra scope. Keeping scope tight is your job: push back on
-every finding outside the request, and decline any you disagree with.
+improvements, and extra scope. It is extremely important to push back on this
+scope creep, even when well-meaning, and especially on repeated reviews.
+Keeping scope limited is your job: decline every finding outside the request,
+and any you disagree with.
 
 Report the findings you agree with, marking those raised by more than one
 member, and each member's score. List each declined finding in one line with
 your reason.
 
+## Churn
+
+Churn is findings returning to code an earlier review already changed: a
+flip-flop between two designs, or one edge case after another. It means
+minimal fixes have proven insufficient: the area lacks a wider abstraction, a
+thorough domain model, or tests.
+
+Churn is the one case where wider scope is accepted. Stop patching that area
+and dispatch a fresh subagent with the churned findings and the code, loading
+the `codebase-design` and `domain-modeling` skills, to investigate the root
+cause and propose one solution. Report the proposal in place of the churned
+findings; in full send, apply it.
+
 ## Full send
 
-Only when the user passes `full send`. Before the first round, finish the work:
-fix known issues, address outstanding PR comments, and run the relevant checks.
+Only when the user passes `full send`. Full send is autonomous: make changes
+without checking in. Before the first round, finish the work: fix known
+issues, address outstanding PR comments, and run the relevant checks.
 
 A pass by every member is one round. Make the changes you agree with, then
 convene a fresh council for the next round with your reasons for each declined
-finding. Stop when the members are satisfied or only declined findings remain.
-Report scores as a table, one row per member and one column per round.
+finding. Stop when the members are satisfied, only declined findings remain,
+or a limit the user set is reached. Report scores as a table, one row per
+member and one column per round.
