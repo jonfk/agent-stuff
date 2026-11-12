@@ -20,7 +20,7 @@ Run Claude members as fresh subagents with the member's model and effort. Run
 GPT members with Codex in the background:
 
 ```bash
-codex exec -m <model> -c model_reasoning_effort=<effort> -s read-only \
+codex exec -m <model> -c model_reasoning_effort=<effort> -s workspace-write \
   --ephemeral --ignore-user-config -o <output-file> - < <request-file>
 ```
 
@@ -28,8 +28,10 @@ Start every member at once. If a member cannot run, stop and report it.
 
 ## Review
 
-Give each member the request, the context it needs, and a read-only mandate.
-Where applicable, ask each for a score out of 10; if one gives none, write
+Give each member the request and the context it needs. Members verify their
+findings by running builds, tests, and other checks, and leave the source and
+git state as they found them. A check that fails because of the sandbox, or
+because members share one checkout, is not a finding. Where applicable, ask each for a score out of 10; if one gives none, write
 `no score`.
 
 Members can be wrong, and they will push to widen the task with changes,
