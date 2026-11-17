@@ -391,6 +391,48 @@ git branch -D tmp-mattpocock-skills-prototype tmp-mattpocock-prototype-split
 
 After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
 
+## `skills/pr`
+
+- Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/pr
+- Upstream: https://github.com/mattpocock/skills.git
+- Imported from: `5863806dd4e15c63174bee4e7515a4256792ecfa`
+- Permalink: https://github.com/mattpocock/skills/tree/5863806dd4e15c63174bee4e7515a4256792ecfa/skills/engineering/pr
+- Ref: `main`
+- Upstream subdirectory: `skills/engineering/pr`
+- Split commit: `f938d8e24360d25a1f21a27f138865c441a11688`
+- Mode: `--squash`
+- Local path: `skills/pr`
+
+This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
+
+```bash
+git fetch https://github.com/mattpocock/skills.git main
+git worktree add --detach /private/tmp/mattpocock-skills-pr FETCH_HEAD
+git -C /private/tmp/mattpocock-skills-pr subtree split -P skills/engineering/pr HEAD -b tmp-mattpocock-pr-split
+git subtree pull --prefix=skills/pr /private/tmp/mattpocock-skills-pr tmp-mattpocock-pr-split --squash
+git worktree remove /private/tmp/mattpocock-skills-pr
+git branch -D tmp-mattpocock-pr-split
+```
+
+After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
+### Dependencies and packaging
+
+Reviewed at the imported upstream commit:
+
+- The subtree contains `SKILL.md`, `CREDITS.md`, and `agents/openai.yaml`. It
+  has no scripts, external assets, setup requirements, or required named skill
+  dependencies. All files are imported unchanged.
+- It keeps upstream's default invocation, so models can invoke it implicitly
+  in both Claude Code and Codex when writing a PR body.
+- Its Summary guidance is copied from humanlayer's `show-me` (see
+  `CREDITS.md`), which is also vendored here as `skills/show-me`. The content
+  is duplicated, not referenced, so the two can be updated independently.
+- It asks for domain language from `GLOSSARY.md`. Upstream renamed its
+  `CONTEXT.md` convention to `GLOSSARY.md`, but the architecture suite here is
+  pinned before that rename and still writes `CONTEXT.md`. This is a naming
+  mismatch, not a shared-version constraint.
+
 ## `skills/thermo-nuclear-code-quality-review`
 
 - Source: https://github.com/cursor/plugins/tree/main/cursor-team-kit/skills/thermo-nuclear-code-quality-review
