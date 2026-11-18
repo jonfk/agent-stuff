@@ -1,0 +1,23 @@
+# Which skill groups scripts/link_skills.py links into each harness folder.
+#
+# Groups are directories at the repo root; every immediate child holding a
+# SKILL.md is a skill. Targets:
+#   claude -> ~/.claude/skills  (Claude Code)
+#   agents -> ~/.agents/skills  (Codex)
+# Both targets must be listed in every profile; use [] for none.
+# Hosts are matched by short hostname (`hostname -s`), lowercased.
+
+# Any host not listed under `hosts`. The non-T3 council runs members with
+# Claude subagents plus `codex exec`, so only Claude Code gets it.
+default:
+  claude: [skills, skills-non-t3]
+  agents: [skills]
+
+# Hosts running T3 Code: the council orchestrates members through T3 Code.
+hosts:
+  euclid:
+    claude: [skills, skills-t3]
+    agents: [skills, skills-t3]
+  prim:
+    claude: [skills, skills-t3]
+    agents: [skills, skills-t3]

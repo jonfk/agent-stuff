@@ -1,8 +1,9 @@
 
 ## Skills
 
-The repository contains 25 tracked skills: 22 broadly useful skills under `skills/`
-and 3 opt-in fiction skills under `skill-packs/fiction/`.
+The repository contains 24 tracked skills: 22 broadly useful skills under `skills/`
+and 2 host-specific variants under `skills-t3/` and `skills-non-t3/`. See
+[Installing skills](#installing-skills) for how each host selects them.
 
 Codex can invoke a skill implicitly when the task matches its `description`. A
 skill is manual-only in Codex when `agents/openai.yaml` sets
@@ -49,7 +50,6 @@ update procedure and dependency review.
 | --- | --- | --- |
 | [`anthropic-frontend-design`](skills/anthropic-frontend-design) | Implicit | [anthropics/skills @ `3337550`](https://github.com/anthropics/skills/tree/33375500bcea98d610eb30ce10ac4e59b89c390d/skills/frontend-design); split `2aa4de6`; locally renamed |
 | [`codebase-design`](skills/codebase-design) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/codebase-design); split `afd7936` |
-| [`council`](skills/council) | **Manual-only** | Local, Claude Code only; inspired by [t3dotgg/tstack @ `1085050`](https://github.com/t3dotgg/tstack/blob/1085050f3baed1ac724caa4a8166145fb2ac88af/skills/council/SKILL.md) |
 | [`create-design-doc`](skills/create-design-doc) | **Manual-only** | Local |
 | [`domain-modeling`](skills/domain-modeling) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling); split `e7bce7a` |
 | [`fix-with-subagents`](skills/fix-with-subagents) | **Manual-only** | Local |
@@ -73,9 +73,6 @@ update procedure and dependency review.
 
 Vendored code subtree metadata and update notes live in [`SUBTREE.md`](SUBTREE.md).
 
-The `skills` directory contains broadly useful skills and is suitable for linking as
-`.agents/skills` so every agent can discover it.
-
 `handoff` is a standalone Matt Pocock skill that writes a conversation summary to
 the OS temporary directory, references existing artifacts, and suggests skills
 for the next agent. It has no required skill dependencies and can be updated
@@ -84,23 +81,18 @@ independently of the architecture suite. Upstream also includes it in the
 for moving between prototype, teaching, and planning sessions. See
 [`SUBTREE.md`](SUBTREE.md#skillshandoff) for the dependency and packaging review.
 
-### Opt-in skill packs
+### Host-specific skill variants
 
-Specialized skills live outside the shared `skills` directory so they can be enabled
-only for projects that need them.
+Both variants are named `council`; a host's profile selects at most one per
+harness folder.
 
 | Skill | Codex invocation | Origin |
 | --- | --- | --- |
-| [`fiction-codex`](skill-packs/fiction/fiction-codex) | Implicit when the pack is enabled | Local |
-| [`fiction-plain-draft`](skill-packs/fiction/fiction-plain-draft) | Implicit when the pack is enabled | Local |
-| [`fiction-revision`](skill-packs/fiction/fiction-revision) | Implicit when the pack is enabled | Local |
+| [`council`](skills-t3/council) | Implicit | Local; runs every member through T3 Code's orchestrator, for Claude Code or Codex in T3 Code; inspired by [t3dotgg/tstack @ `1085050`](https://github.com/t3dotgg/tstack/blob/1085050f3baed1ac724caa4a8166145fb2ac88af/skills/council/SKILL.md) |
+| [`council`](skills-non-t3/council) | Implicit | Local, Claude Code only; runs members as Claude subagents plus `codex exec`; inspired by [t3dotgg/tstack @ `1085050`](https://github.com/t3dotgg/tstack/blob/1085050f3baed1ac724caa4a8166145fb2ac88af/skills/council/SKILL.md) |
 
 Validate the inventory links, documented totals, and skill frontmatter with
-`ruby scripts/check-skill-inventory.rb`.
-
-When a project needs a complete pack, use a small linking script or package manager
-to populate its real `.agents/skills` directory from both `skills/*` and the selected
-pack. This creates an overlay of skill sources and avoids maintaining links by hand.
+`scripts/check_skill_inventory.py`.
 
 ### Manual-only skills
 
@@ -110,6 +102,93 @@ Some skills should only run when explicitly requested, usually because they are 
 - Codex: add `policy.allow_implicit_invocation: false` to `agents/openai.yaml`.
 
 Keep both settings together for shared skills so manual invocation works in both tools.
+
+## Installing skills
+
+`~/.claude/skills` (Claude Code) and `~/.agents/skills` (Codex) are real
+directories holding one symlink per skill, so each host loads only the skills
+its profile selects. Harness-owned content, such as the Claude desktop app's
+`synced` folder, lives there too, outside the repo.
+
+- **Groups** are repo-root directories whose immediate children holding a
+  `SKILL.md` are skills: `skills` (shared), `skills-t3` (T3 Code hosts), and
+  `skills-non-t3` (other hosts). The subtree skills must stay under `skills/`,
+  since `git subtree` is pinned to their `skills/<name>` prefix.
+- **[`profiles.yaml`](profiles.yaml)** maps each short hostname (`hostname -s`,
+  lowercased) to the groups linked into its `claude` and `agents` targets;
+  unlisted hosts use `default`. A skill name appearing in two groups for one
+  target is an error.
+- **`scripts/link_skills.py`** applies the profile: `--host NAME` picks another
+  profile, `--home DIR` uses another home directory, and `--dry-run` prints the
+  changes without making them. It owns only symlinks pointing inside this repo:
+  it creates, repoints, and prunes those, and reports anything else occupying a
+  skill's name as a conflict, leaving it untouched.
+
+The scripts are Python and run through [uv](https://docs.astral.sh/uv/), which
+fetches their one dependency (PyYAML) on first use; each is executable, or run
+it as `uv run --script scripts/<name>.py`.
+
+Edits to an existing skill are live through its link. Re-run
+`scripts/link_skills.py` after adding, removing, or renaming a skill, or changing
+`profiles.yaml`.
+
+The T3 group is selected by host, not by harness: on `euclid` and `prim`,
+Claude Code or Codex run outside T3 Code also load the T3 `council`, which
+needs T3 Code's orchestrator tools.
+
+### Validation
+
+Every run validates the whole of `profiles.yaml` and every skill any profile
+selects, not only this host's profile, so a mistake made for another host is
+caught where it is written. All problems are reported together, and any error
+stops the run before a single link changes. `scripts/link_skills.py --check`
+runs the validation alone.
+
+Errors:
+
+- The file is empty, is not valid YAML, has a key other than `default` and
+  `hosts`, or lacks `default`.
+- A key appears twice in one mapping. YAML would silently keep the last.
+- A host key is not a short hostname (it has a dot, or YAML reads it as another
+  type, such as `no`), or two host keys differ only by case.
+- A profile lacks `claude` or `agents` (use `[]` for none), has another key, or
+  lists something that is not a list of group names.
+- A group is listed twice for one target, is not a directory in the repo, or
+  holds no skills.
+- A skill name is in two groups selected for one target.
+- A `SKILL.md` has no valid frontmatter, or its `name` differs from its
+  directory name.
+- A target is still a whole-folder symlink, or is a file.
+
+Warnings, which do not stop the run:
+
+- A folder in a group has no `SKILL.md`, so it is not linked.
+- A `skills` or `skills-*` directory is not used by any profile.
+
+A host missing from `hosts` is not an error: the first output line says it is
+not listed and is using `default`.
+
+Tests: `scripts/test_link_skills.py`.
+
+### Migrating from whole-folder symlinks
+
+Previously `~/.claude/skills` and `~/.agents/skills` were each a symlink to this
+repo's `skills/` folder. `scripts/link_skills.py` refuses to run against such a
+target. Run this once per host, from the checkout those symlinks point to:
+
+```bash
+scripts/migrate_skill_links.py --dry-run   # show what would change
+scripts/migrate_skill_links.py
+```
+
+It validates `profiles.yaml` first, then replaces each legacy symlink with a
+real directory, moves the Claude desktop app's `skills/synced` folder into
+`~/.claude/skills`, removes empty leftover folders from `skills/`, and runs
+`scripts/link_skills.py`. It refuses a symlink that points at another checkout, and
+running it again changes nothing.
+
+`scripts/migrate_skill_links.py`, `scripts/test_migrate_skill_links.py`, and this
+section are temporary: delete them once every host is migrated.
 
 ## Inspiration
 
