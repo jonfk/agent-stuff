@@ -422,9 +422,14 @@ Reviewed at the imported upstream commit:
 
 - The subtree contains `SKILL.md`, `CREDITS.md`, and `agents/openai.yaml`. It
   has no scripts, external assets, setup requirements, or required named skill
-  dependencies. All files are imported unchanged.
+  dependencies.
 - It keeps upstream's default invocation, so models can invoke it implicitly
   in both Claude Code and Codex when writing a PR body.
+
+Local overlay: the Evidence section's screenshot line in `SKILL.md` asks for
+screenshots of visual changes whenever tools allow, and to tell the user when
+no screenshot tool is available. Preserve that line after updates. All other
+files are imported unchanged.
 - Its Summary guidance is copied from humanlayer's `show-me` (see
   `CREDITS.md`), which is also vendored here as `skills/show-me`. The content
   is duplicated, not referenced, so the two can be updated independently.
