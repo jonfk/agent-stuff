@@ -66,14 +66,13 @@ def run(
     out: Optional[TextIO] = None,
     err: Optional[TextIO] = None,
     hostname: Optional[str] = None,
-    script_path: Optional[str] = None,
 ) -> int:
     """Returns the process exit status. `root` is the repo root holding
     profiles.yaml and the group directories."""
     out = out or sys.stdout
     err = err or sys.stderr
     try:
-        return _run(argv, root, out, err, hostname, script_path)
+        return _run(argv, root, out, err, hostname)
     except Invalid as error:
         report_invalid(error, err)
         return EXIT_INVALID
@@ -85,7 +84,7 @@ def report_invalid(error: Invalid, err: TextIO) -> None:
     print("Nothing was changed.", file=err)
 
 
-def _run(argv, root, out, err, hostname, script_path) -> int:
+def _run(argv, root, out, err, hostname) -> int:
     options = parse_options(argv)
     root = os.path.realpath(root)
     config = load_config(root)
@@ -101,7 +100,7 @@ def _run(argv, root, out, err, hostname, script_path) -> int:
 
     profile_name = f"hosts.{host}" if f"hosts.{host}" in config.plans else "default"
     targets = [(key, os.path.join(home, *parts)) for key, parts in TARGETS.items()]
-    errors = [problem for _key, target in targets if (problem := target_problem(target, root, script_path))]
+    errors = [problem for _key, target in targets if (problem := target_problem(target))]
     if errors:
         raise Invalid(errors)
 
@@ -398,14 +397,9 @@ def link_destination(path: str) -> str:
     return os.path.abspath(os.path.join(os.path.dirname(path), os.readlink(path)))
 
 
-def target_problem(target: str, root: str, script_path: Optional[str]) -> Optional[str]:
+def target_problem(target: str) -> Optional[str]:
     if os.path.islink(target):
-        scripts = os.path.dirname(script_path) if script_path else os.path.join(root, "scripts")
-        migrate = os.path.join(scripts, "migrate_skill_links.py")
-        return (
-            f"{target} is a symlink to {link_destination(target)} (legacy whole-folder setup). "
-            f"Convert it with {migrate}, or replace it with a real directory by hand."
-        )
+        return f"{target} is a symlink to {link_destination(target)}; replace it with a real directory"
     if os.path.exists(target) and not os.path.isdir(target):
         return f"{target} exists and is not a directory"
     return None
@@ -467,4 +461,4 @@ def apply(key: str, target: str, desired: dict[str, str], root: str, dry_run: bo
 
 if __name__ == "__main__":
     script = os.path.abspath(__file__)
-    sys.exit(run(sys.argv[1:], root=os.path.dirname(os.path.dirname(script)), script_path=script))
+    sys.exit(run(sys.argv[1:], root=os.path.dirname(os.path.dirname(script))))

@@ -158,7 +158,7 @@ Errors:
 - A skill name is in two groups selected for one target.
 - A `SKILL.md` has no valid frontmatter, or its `name` differs from its
   directory name.
-- A target is still a whole-folder symlink, or is a file.
+- A target is a symlink or a file, not a real directory.
 
 Warnings, which do not stop the run:
 
@@ -169,26 +169,6 @@ A host missing from `hosts` is not an error: the first output line says it is
 not listed and is using `default`.
 
 Tests: `scripts/test_link_skills.py`.
-
-### Migrating from whole-folder symlinks
-
-Previously `~/.claude/skills` and `~/.agents/skills` were each a symlink to this
-repo's `skills/` folder. `scripts/link_skills.py` refuses to run against such a
-target. Run this once per host, from the checkout those symlinks point to:
-
-```bash
-scripts/migrate_skill_links.py --dry-run   # show what would change
-scripts/migrate_skill_links.py
-```
-
-It validates `profiles.yaml` first, then replaces each legacy symlink with a
-real directory, moves the Claude desktop app's `skills/synced` folder into
-`~/.claude/skills`, removes empty leftover folders from `skills/`, and runs
-`scripts/link_skills.py`. It refuses a symlink that points at another checkout, and
-running it again changes nothing.
-
-`scripts/migrate_skill_links.py`, `scripts/test_migrate_skill_links.py`, and this
-section are temporary: delete them once every host is migrated.
 
 ## Inspiration
 

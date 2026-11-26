@@ -131,15 +131,14 @@ class LinkSkillsTest(unittest.TestCase):
         self.assertIn("conflict pr", out)
         self.assertEqual(self.repo_path("skills/pr"), os.readlink(self.claude("pr")))
 
-    def test_legacy_whole_folder_symlink_is_refused_and_points_at_the_migration(self):
+    def test_symlinked_target_is_refused(self):
         os.makedirs(os.path.join(self.home, ".claude"))
         os.symlink(self.repo_path("skills"), os.path.join(self.home, ".claude", "skills"))
 
         status, _out, err = self.run_links("--host", "euclid")
 
         self.assertEqual(2, status)
-        self.assertIn("legacy whole-folder setup", err)
-        self.assertIn(self.repo_path("scripts/migrate_skill_links.py"), err)
+        self.assertIn("replace it with a real directory", err)
         self.assertTrue(os.path.islink(os.path.join(self.home, ".claude", "skills")))
         self.assertFalse(os.path.lexists(os.path.join(self.home, ".agents")), "agents target must not be created")
 
