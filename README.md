@@ -124,13 +124,27 @@ its profile selects. Harness-owned content, such as the Claude desktop app's
   it creates, repoints, and prunes those, and reports anything else occupying a
   skill's name as a conflict, leaving it untouched.
 
-The scripts are Python and run through [uv](https://docs.astral.sh/uv/), which
-fetches their one dependency (PyYAML) on first use; each is executable, or run
-it as `uv run --script scripts/<name>.py`.
+`just link-skills` runs `scripts/link_skills.py` and passes its arguments
+through.
 
 Edits to an existing skill are live through its link. Re-run
-`scripts/link_skills.py` after adding, removing, or renaming a skill, or changing
+`just link-skills` after adding, removing, or renaming a skill, or changing
 `profiles.yaml`.
+
+### Setting up a new host
+
+1. Install [uv](https://docs.astral.sh/uv/), and optionally [just](https://just.systems).
+2. Clone this repo where it will stay. The links point into the checkout, and
+   after a move `link_skills.py` treats the old links as someone else's and
+   reports them as conflicts. To move it, delete the links into the old path
+   (`find ~/.claude/skills ~/.agents/skills -maxdepth 1 -lname '<old path>/*' -delete`,
+   where `<old path>` is the fully resolved path that `readlink` shows on any of
+   the links), then run `just link-skills` from the new location.
+3. If the host needs something other than `default`, add it under `hosts` in
+   [`profiles.yaml`](profiles.yaml), keyed by `hostname -s` in lowercase.
+4. Run `just link-skills --dry-run` to preview, then `just link-skills`. It
+   creates `~/.claude/skills` and `~/.agents/skills` if they are missing; if
+   either is a symlink, replace it with a real directory first.
 
 The T3 group is selected by host, not by harness: on `euclid` and `prim`,
 Claude Code or Codex run outside T3 Code also load the T3 `council`, which
