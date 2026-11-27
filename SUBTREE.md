@@ -14,7 +14,7 @@ directly from [`mattpocock/skills`](https://github.com/mattpocock/skills):
 
 - Upstream: https://github.com/mattpocock/skills.git
 - Ref: `main`
-- Pinned upstream commit: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`
+- Pinned upstream commit: `bbadaa631c37af594e5a05c9cefacd9956136b18`
 - Update policy: **atomic**
 
 Each member remains a separate subtree because it comes from a different upstream
@@ -98,11 +98,11 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/grilling`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling
-- Imported from: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`
-- Permalink: https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/grilling
+- Imported from: `bbadaa631c37af594e5a05c9cefacd9956136b18`
+- Permalink: https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/productivity/grilling
 - Ref: `main`
 - Upstream subdirectory: `skills/productivity/grilling`
-- Split commit: `69b3e82ccfbf85f552b80ef665989efdee27c31a`
+- Split commit: `590015edd2c4ce4faf05e48091d8df8ae5277f7d`
 - Mode: `--squash`
 - Local path: `skills/grilling`
 
@@ -126,11 +126,11 @@ implicitly in both Claude Code and Codex. All files are imported unchanged.
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff
 - Upstream: https://github.com/mattpocock/skills.git
-- Imported from: `d81f3a183412e71a5b1e84ca21bc1a35eea03a60`
-- Permalink: https://github.com/mattpocock/skills/tree/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/handoff
+- Imported from: `bbadaa631c37af594e5a05c9cefacd9956136b18`
+- Permalink: https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/productivity/handoff
 - Ref: `main`
 - Upstream subdirectory: `skills/productivity/handoff`
-- Split commit: `dec8c574ac946399627b339e951b4ace00ba1648`
+- Split commit: `acd8e4dae4d427aac01cd7aed96afe3f7478376b`
 - Mode: `--squash`
 - Local path: `skills/handoff`
 
@@ -160,19 +160,19 @@ Reviewed at the imported upstream commit:
 - None of the existing local skills references `handoff`. It does not require
   updating those skills or joining the Matt Pocock architecture update cohort.
 - Upstream's
-  [`ask-matt`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/ask-matt/SKILL.md)
+  [`ask-matt`](https://github.com/mattpocock/skills/blob/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/ask-matt/SKILL.md)
   router recommends handoffs into and out of prototype sessions. Upstream docs
   also describe optional composition with
-  [`teach`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/docs/productivity/teach.md)
+  [`teach`](https://github.com/mattpocock/skills/blob/bbadaa631c37af594e5a05c9cefacd9956136b18/docs/productivity/teach.md)
   and
-  [`wayfinder`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/docs/engineering/wayfinder.md).
+  [`wayfinder`](https://github.com/mattpocock/skills/blob/bbadaa631c37af594e5a05c9cefacd9956136b18/docs/engineering/wayfinder.md).
   These are workflow recommendations, not shared-version constraints.
 - The upstream
-  [`mattpocock-skills` Claude Code plugin](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/.claude-plugin/plugin.json)
+  [`mattpocock-skills` Claude Code plugin](https://github.com/mattpocock/skills/blob/bbadaa631c37af594e5a05c9cefacd9956136b18/.claude-plugin/plugin.json)
   bundles `handoff` with the engineering and productivity skills. This subtree
   imports just the standalone skill, without the plugin or companion skills.
 - Upstream also has a separate in-progress
-  [`claude-handoff`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/in-progress/claude-handoff/SKILL.md)
+  [`claude-handoff`](https://github.com/mattpocock/skills/blob/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/in-progress/claude-handoff/SKILL.md)
   that launches a background Claude agent. It is neither a dependency of
   `handoff` nor included in this import.
 
@@ -250,11 +250,11 @@ Reviewed at the imported upstream commit:
 ## `skills/domain-modeling`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling
-- Imported from: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`
-- Permalink: https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling
+- Imported from: `bbadaa631c37af594e5a05c9cefacd9956136b18`
+- Permalink: https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/domain-modeling
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/domain-modeling`
-- Split commit: `e7bce7aa4058f69dd903202390764117d6f343c7`
+- Split commit: `582e6306aedd28461f42fcc467570af95e7ff9e7`
 - Mode: `--squash`
 - Local path: `skills/domain-modeling`
 
@@ -274,11 +274,11 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/codebase-design`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/codebase-design
-- Imported from: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`
-- Permalink: https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/codebase-design
+- Imported from: `bbadaa631c37af594e5a05c9cefacd9956136b18`
+- Permalink: https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/codebase-design
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/codebase-design`
-- Split commit: `afd7936f40d5b9f7667ebe6f38e85fbc8bc41d6e`
+- Split commit: `d3da840d40e7a14b6c73850d51bc5b829ce743bb`
 - Mode: `--squash`
 - Local path: `skills/codebase-design`
 
@@ -322,11 +322,11 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/improve-codebase-architecture`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture
-- Imported from: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`
-- Permalink: https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/improve-codebase-architecture
+- Imported from: `bbadaa631c37af594e5a05c9cefacd9956136b18`
+- Permalink: https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/improve-codebase-architecture
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/improve-codebase-architecture`
-- Split commit: `2d8ac8c6a475d0ff81895743dc102b9a531464e5`
+- Split commit: `59af8b64cfe317a4cf57189dcdbb71e5cc017172`
 - Mode: `--squash`
 - Local path: `skills/improve-codebase-architecture`
 
@@ -346,11 +346,11 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 ## `skills/tdd`
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/engineering/tdd
-- Imported from: `885e2ca4d842d139e9aef4e48d366c63cb1b8013`
-- Permalink: https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/tdd
+- Imported from: `bbadaa631c37af594e5a05c9cefacd9956136b18`
+- Permalink: https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/tdd
 - Ref: `main`
 - Upstream subdirectory: `skills/engineering/tdd`
-- Split commit: `54cfb36c807d6ce276a5675c3b31dc9cfcf196b8`
+- Split commit: `7841f0a69153634476053837f69294f3db6b187b`
 - Mode: `--squash`
 - Local path: `skills/tdd`
 
@@ -366,6 +366,11 @@ git branch -D tmp-mattpocock-skills-tdd tmp-mattpocock-tdd-split
 ```
 
 After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+
+`tdd` reads the `GLOSSARY.md` that the
+[Matt Pocock architecture suite](#matt-pocock-architecture-suite) writes. It is
+not a cohort member, but update it alongside the suite so both use the same
+glossary file name.
 
 ## `skills/prototype`
 
@@ -433,34 +438,8 @@ files are imported unchanged.
 - Its Summary guidance is copied from humanlayer's `show-me` (see
   `CREDITS.md`), which is also vendored here as `skills/show-me`. The content
   is duplicated, not referenced, so the two can be updated independently.
-- It asks for domain language from `GLOSSARY.md`. Upstream renamed its
-  `CONTEXT.md` convention to `GLOSSARY.md`, but the architecture suite here is
-  pinned before that rename and still writes `CONTEXT.md`. This is a naming
-  mismatch, not a shared-version constraint.
-
-## `skills/thermo-nuclear-code-quality-review`
-
-- Source: https://github.com/cursor/plugins/tree/main/cursor-team-kit/skills/thermo-nuclear-code-quality-review
-- Imported from: `3347cbab5b54136f6fba0994c3a01a56f7fb7fca`
-- Permalink: https://github.com/cursor/plugins/tree/3347cbab5b54136f6fba0994c3a01a56f7fb7fca/cursor-team-kit/skills/thermo-nuclear-code-quality-review
-- Ref: `3347cbab5b54136f6fba0994c3a01a56f7fb7fca`
-- Upstream subdirectory: `cursor-team-kit/skills/thermo-nuclear-code-quality-review`
-- Split commit: `8bcb307f4e7a7b7e9cf51996e1fcc236df0f36bc`
-- Mode: `--squash`
-- Local path: `skills/thermo-nuclear-code-quality-review`
-
-This is a subtree of an upstream subdirectory, not the upstream repo root. To update it, split the upstream subdirectory first:
-
-```bash
-git fetch https://github.com/cursor/plugins.git <ref>
-git worktree add /private/tmp/cursor-plugins-thermo FETCH_HEAD
-git -C /private/tmp/cursor-plugins-thermo subtree split -P cursor-team-kit/skills/thermo-nuclear-code-quality-review HEAD -b tmp-cursor-thermo-nuclear-code-quality-review-split
-git subtree pull --prefix=skills/thermo-nuclear-code-quality-review /private/tmp/cursor-plugins-thermo tmp-cursor-thermo-nuclear-code-quality-review-split --squash
-git worktree remove /private/tmp/cursor-plugins-thermo
-git branch -D tmp-cursor-thermo-nuclear-code-quality-review-split
-```
-
-After updating vendored code, refresh the commit, split commit, and permalink here and in `README.md`.
+- It asks for domain language from `GLOSSARY.md`, the file the architecture
+  suite writes.
 
 ## `skills/show-me`
 
@@ -489,20 +468,3 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 Local overlay: this skill is manual-only in both Claude Code and Codex. Preserve
 `disable-model-invocation: true` in `SKILL.md` and
 `policy.allow_implicit_invocation: false` in `agents/openai.yaml` after updates.
-
-## Locally maintained copies
-
-### `skills/grill-me`
-
-- Source: https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md
-- Source snapshot: `60aa99c0230fbac087514ba5fca2ae6e519965fe`
-- Initially copied in local commit: `cb7c6587bb664e14da85c4b9ed3bce1a71431619`
-- Local divergence began in commit: `fb2dd08dd86f53e9af41a1b96456a5940d2c641a`
-- Local path: `skills/grill-me`
-- Update policy: **do not update from upstream**
-
-This is a maintained local fork, not a subtree. Upstream later moved `grill-me`
-and changed it into a manual-only wrapper around `grilling`; this fork retains
-its distinct interview behavior. It is manual-only in both Claude Code and
-Codex through `disable-model-invocation: true` in `SKILL.md` and
-`policy.allow_implicit_invocation: false` in `agents/openai.yaml`.
