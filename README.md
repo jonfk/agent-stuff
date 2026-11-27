@@ -1,7 +1,7 @@
 
 ## Skills
 
-The repository contains 24 tracked skills: 22 broadly useful skills under `skills/`
+The repository contains 23 tracked skills: 21 broadly useful skills under `skills/`
 and 2 host-specific variants under `skills-t3/` and `skills-non-t3/`. See
 [Installing skills](#installing-skills) for how each host selects them.
 
@@ -57,7 +57,6 @@ update procedure and dependency review.
 | [`git-propose-commit`](skills/git-propose-commit) | Implicit | Local |
 | [`git-reshape-history`](skills/git-reshape-history) | **Manual-only** | Local |
 | [`git-subtree`](skills/git-subtree) | Implicit | Local |
-| [`grill-me`](skills/grill-me) | **Manual-only** | Maintained local fork of [mattpocock/skills @ `60aa99c`](https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md); diverged locally at `fb2dd08` and must not be updated from upstream |
 | [`grill-with-docs`](skills/grill-with-docs) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/grill-with-docs); split `70b6090` |
 | [`grilling`](skills/grilling) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/grilling); split `69b3e82` |
 | [`handoff`](skills/handoff) | **Manual-only** | [mattpocock/skills @ `d81f3a1`](https://github.com/mattpocock/skills/tree/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/handoff); split `dec8c57` |

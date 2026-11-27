@@ -489,20 +489,3 @@ After updating vendored code, refresh the commit, split commit, and permalink he
 Local overlay: this skill is manual-only in both Claude Code and Codex. Preserve
 `disable-model-invocation: true` in `SKILL.md` and
 `policy.allow_implicit_invocation: false` in `agents/openai.yaml` after updates.
-
-## Locally maintained copies
-
-### `skills/grill-me`
-
-- Source: https://github.com/mattpocock/skills/blob/60aa99c0230fbac087514ba5fca2ae6e519965fe/grill-me/SKILL.md
-- Source snapshot: `60aa99c0230fbac087514ba5fca2ae6e519965fe`
-- Initially copied in local commit: `cb7c6587bb664e14da85c4b9ed3bce1a71431619`
-- Local divergence began in commit: `fb2dd08dd86f53e9af41a1b96456a5940d2c641a`
-- Local path: `skills/grill-me`
-- Update policy: **do not update from upstream**
-
-This is a maintained local fork, not a subtree. Upstream later moved `grill-me`
-and changed it into a manual-only wrapper around `grilling`; this fork retains
-its distinct interview behavior. It is manual-only in both Claude Code and
-Codex through `disable-model-invocation: true` in `SKILL.md` and
-`policy.allow_implicit_invocation: false` in `agents/openai.yaml`.
