@@ -49,23 +49,23 @@ update procedure and dependency review.
 | Skill | Codex invocation | Origin |
 | --- | --- | --- |
 | [`anthropic-frontend-design`](skills/anthropic-frontend-design) | Implicit | [anthropics/skills @ `3337550`](https://github.com/anthropics/skills/tree/33375500bcea98d610eb30ce10ac4e59b89c390d/skills/frontend-design); split `2aa4de6`; locally renamed |
-| [`codebase-design`](skills/codebase-design) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/codebase-design); split `afd7936` |
+| [`codebase-design`](skills/codebase-design) | Implicit | [mattpocock/skills @ `bbadaa6`](https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/codebase-design); split `d3da840` |
 | [`create-design-doc`](skills/create-design-doc) | **Manual-only** | Local |
-| [`domain-modeling`](skills/domain-modeling) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling); split `e7bce7a` |
+| [`domain-modeling`](skills/domain-modeling) | Implicit | [mattpocock/skills @ `bbadaa6`](https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/domain-modeling); split `582e630` |
 | [`fix-with-subagents`](skills/fix-with-subagents) | **Manual-only** | Local |
 | [`git-create-commit`](skills/git-create-commit) | Implicit | Local |
 | [`git-propose-commit`](skills/git-propose-commit) | Implicit | Local |
 | [`git-reshape-history`](skills/git-reshape-history) | **Manual-only** | Local |
 | [`git-subtree`](skills/git-subtree) | Implicit | Local |
 | [`grill-with-docs`](skills/grill-with-docs) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/grill-with-docs); split `70b6090` |
-| [`grilling`](skills/grilling) | Implicit | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/grilling); split `69b3e82` |
+| [`grilling`](skills/grilling) | Implicit | [mattpocock/skills @ `bbadaa6`](https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/productivity/grilling); split `590015e` |
 | [`handoff`](skills/handoff) | **Manual-only** | [mattpocock/skills @ `d81f3a1`](https://github.com/mattpocock/skills/tree/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/handoff); split `dec8c57` |
-| [`improve-codebase-architecture`](skills/improve-codebase-architecture) | **Manual-only** | [mattpocock/skills @ `c55ee46`](https://github.com/mattpocock/skills/tree/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/improve-codebase-architecture); split `2d8ac8c` |
+| [`improve-codebase-architecture`](skills/improve-codebase-architecture) | **Manual-only** | [mattpocock/skills @ `bbadaa6`](https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/improve-codebase-architecture); split `59af8b6` |
 | [`pr`](skills/pr) | Implicit | [mattpocock/skills @ `5863806`](https://github.com/mattpocock/skills/tree/5863806dd4e15c63174bee4e7515a4256792ecfa/skills/engineering/pr); split `f938d8e` |
 | [`prototype`](skills/prototype) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/prototype); split `56dafec` |
 | [`retro`](skills/retro) | **Manual-only** | [mattpocock/skills @ `59db609`](https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/retro); split `796ead9`; requires `writing-for-agents` |
 | [`show-me`](skills/show-me) | **Manual-only** | [humanlayer/skills @ `ca7c808`](https://github.com/humanlayer/skills/tree/ca7c8088db69e315a8b2deea43820270457f8f3c/plugins/show-me/skills/show-me); split `e6bc310`; local manual-only policy |
-| [`tdd`](skills/tdd) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/tdd); split `54cfb36` |
+| [`tdd`](skills/tdd) | Implicit | [mattpocock/skills @ `bbadaa6`](https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/tdd); split `7841f0a` |
 | [`writing-for-agents`](skills/writing-for-agents) | Implicit | [mattpocock/skills @ `59db609`](https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/productivity/writing-for-agents); split `3bbd7f4` |
 | [`yt-transcribe`](skills/yt-transcribe) | Implicit | Local |
 
