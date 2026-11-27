@@ -1,7 +1,7 @@
 
 ## Skills
 
-The repository contains 23 tracked skills: 21 broadly useful skills under `skills/`
+The repository contains 22 tracked skills: 20 broadly useful skills under `skills/`
 and 2 host-specific variants under `skills-t3/` and `skills-non-t3/`. See
 [Installing skills](#installing-skills) for how each host selects them.
 
@@ -66,7 +66,6 @@ update procedure and dependency review.
 | [`retro`](skills/retro) | **Manual-only** | [mattpocock/skills @ `59db609`](https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/engineering/retro); split `796ead9`; requires `writing-for-agents` |
 | [`show-me`](skills/show-me) | **Manual-only** | [humanlayer/skills @ `ca7c808`](https://github.com/humanlayer/skills/tree/ca7c8088db69e315a8b2deea43820270457f8f3c/plugins/show-me/skills/show-me); split `e6bc310`; local manual-only policy |
 | [`tdd`](skills/tdd) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/tdd); split `54cfb36` |
-| [`thermo-nuclear-code-quality-review`](skills/thermo-nuclear-code-quality-review) | **Manual-only** | [cursor/plugins @ `3347cba`](https://github.com/cursor/plugins/tree/3347cbab5b54136f6fba0994c3a01a56f7fb7fca/cursor-team-kit/skills/thermo-nuclear-code-quality-review), substantially rewritten locally |
 | [`writing-for-agents`](skills/writing-for-agents) | Implicit | [mattpocock/skills @ `59db609`](https://github.com/mattpocock/skills/tree/59db609eb1e18aaf59b63284d0e52255aff0c63c/skills/productivity/writing-for-agents); split `3bbd7f4` |
 | [`yt-transcribe`](skills/yt-transcribe) | Implicit | Local |
 
