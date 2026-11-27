@@ -126,11 +126,11 @@ implicitly in both Claude Code and Codex. All files are imported unchanged.
 
 - Source: https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff
 - Upstream: https://github.com/mattpocock/skills.git
-- Imported from: `d81f3a183412e71a5b1e84ca21bc1a35eea03a60`
-- Permalink: https://github.com/mattpocock/skills/tree/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/handoff
+- Imported from: `bbadaa631c37af594e5a05c9cefacd9956136b18`
+- Permalink: https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/productivity/handoff
 - Ref: `main`
 - Upstream subdirectory: `skills/productivity/handoff`
-- Split commit: `dec8c574ac946399627b339e951b4ace00ba1648`
+- Split commit: `acd8e4dae4d427aac01cd7aed96afe3f7478376b`
 - Mode: `--squash`
 - Local path: `skills/handoff`
 
@@ -160,19 +160,19 @@ Reviewed at the imported upstream commit:
 - None of the existing local skills references `handoff`. It does not require
   updating those skills or joining the Matt Pocock architecture update cohort.
 - Upstream's
-  [`ask-matt`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/engineering/ask-matt/SKILL.md)
+  [`ask-matt`](https://github.com/mattpocock/skills/blob/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/ask-matt/SKILL.md)
   router recommends handoffs into and out of prototype sessions. Upstream docs
   also describe optional composition with
-  [`teach`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/docs/productivity/teach.md)
+  [`teach`](https://github.com/mattpocock/skills/blob/bbadaa631c37af594e5a05c9cefacd9956136b18/docs/productivity/teach.md)
   and
-  [`wayfinder`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/docs/engineering/wayfinder.md).
+  [`wayfinder`](https://github.com/mattpocock/skills/blob/bbadaa631c37af594e5a05c9cefacd9956136b18/docs/engineering/wayfinder.md).
   These are workflow recommendations, not shared-version constraints.
 - The upstream
-  [`mattpocock-skills` Claude Code plugin](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/.claude-plugin/plugin.json)
+  [`mattpocock-skills` Claude Code plugin](https://github.com/mattpocock/skills/blob/bbadaa631c37af594e5a05c9cefacd9956136b18/.claude-plugin/plugin.json)
   bundles `handoff` with the engineering and productivity skills. This subtree
   imports just the standalone skill, without the plugin or companion skills.
 - Upstream also has a separate in-progress
-  [`claude-handoff`](https://github.com/mattpocock/skills/blob/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/in-progress/claude-handoff/SKILL.md)
+  [`claude-handoff`](https://github.com/mattpocock/skills/blob/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/in-progress/claude-handoff/SKILL.md)
   that launches a background Claude agent. It is neither a dependency of
   `handoff` nor included in this import.
 

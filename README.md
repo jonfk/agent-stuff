@@ -59,7 +59,7 @@ update procedure and dependency review.
 | [`git-subtree`](skills/git-subtree) | Implicit | Local |
 | [`grill-with-docs`](skills/grill-with-docs) | **Manual-only** | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/grill-with-docs); split `70b6090` |
 | [`grilling`](skills/grilling) | Implicit | [mattpocock/skills @ `bbadaa6`](https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/productivity/grilling); split `590015e` |
-| [`handoff`](skills/handoff) | **Manual-only** | [mattpocock/skills @ `d81f3a1`](https://github.com/mattpocock/skills/tree/d81f3a183412e71a5b1e84ca21bc1a35eea03a60/skills/productivity/handoff); split `dec8c57` |
+| [`handoff`](skills/handoff) | **Manual-only** | [mattpocock/skills @ `bbadaa6`](https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/productivity/handoff); split `acd8e4d` |
 | [`improve-codebase-architecture`](skills/improve-codebase-architecture) | **Manual-only** | [mattpocock/skills @ `bbadaa6`](https://github.com/mattpocock/skills/tree/bbadaa631c37af594e5a05c9cefacd9956136b18/skills/engineering/improve-codebase-architecture); split `59af8b6` |
 | [`pr`](skills/pr) | Implicit | [mattpocock/skills @ `5863806`](https://github.com/mattpocock/skills/tree/5863806dd4e15c63174bee4e7515a4256792ecfa/skills/engineering/pr); split `f938d8e` |
 | [`prototype`](skills/prototype) | Implicit | [mattpocock/skills @ `885e2ca`](https://github.com/mattpocock/skills/tree/885e2ca4d842d139e9aef4e48d366c63cb1b8013/skills/engineering/prototype); split `56dafec` |
